@@ -1,0 +1,305 @@
+ERROR - 2022-03-22 01:19:51 --> Column 'descricao' cannot be null
+CRITICAL - 2022-03-22 01:19:51 --> Column 'descricao' cannot be null
+#0 C:\xampp\htdocs\sistemadalpe\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `se...', 0)
+#1 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 C:\xampp\htdocs\sistemadalpe\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(91): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(41): App\Controllers\Setores->salvar()
+#10 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Setores->adicionar()
+#11 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Setores))
+#12 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2022-03-22 01:19:58 --> Column 'descricao' cannot be null
+CRITICAL - 2022-03-22 01:19:58 --> Column 'descricao' cannot be null
+#0 C:\xampp\htdocs\sistemadalpe\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `se...', 0)
+#1 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 C:\xampp\htdocs\sistemadalpe\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(91): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(41): App\Controllers\Setores->salvar()
+#10 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Setores->adicionar()
+#11 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Setores))
+#12 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2022-03-22 01:20:42 --> Column 'descricao' cannot be null
+CRITICAL - 2022-03-22 01:20:42 --> Column 'descricao' cannot be null
+#0 C:\xampp\htdocs\sistemadalpe\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `se...', 0)
+#1 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 C:\xampp\htdocs\sistemadalpe\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(91): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\sistemadalpe\app\Controllers\Setores.php(41): App\Controllers\Setores->salvar()
+#10 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Setores->adicionar()
+#11 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Setores))
+#12 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-03-22 02:01:51 --> Undefined variable: sessionData
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(58): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 58, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(36): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-22 02:07:09 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 109, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(23): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-22 02:07:44 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 109, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(23): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-22 03:11:32 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 10, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(88): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login_index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-22 13:43:13 --> Deletes are not allowed unless they contain a "where" or "like" clause.
+#0 C:\xampp\htdocs\sistemadalpe\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#1 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(963): CodeIgniter\Model->doDelete(NULL, false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(84): CodeIgniter\BaseModel->delete(NULL)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->excluir()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-22 13:43:49 --> Deletes are not allowed unless they contain a "where" or "like" clause.
+#0 C:\xampp\htdocs\sistemadalpe\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#1 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(963): CodeIgniter\Model->doDelete(NULL, false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(84): CodeIgniter\BaseModel->delete(NULL)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->excluir()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-22 14:01:23 --> Call to undefined method App\Models\LicenciandosModel::getUniversidades
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(61): CodeIgniter\Model->__call('getUniversidade...', Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->editar('27')
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-22 15:14:37 --> Undefined variable: setores
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_adicionar.php(242): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 242, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(74): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 15:38:44 --> Undefined variable: usuario
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_adicionar.php(225): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 225, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(74): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 16:17:13 --> Undefined variable: documentos
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_adicionar.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 148, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(74): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 16:17:21 --> Undefined variable: documento
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_adicionar.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 157, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(74): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 16:17:27 --> Undefined variable: licenciando
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_adicionar.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(74): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 19:06:16 --> Undefined variable: results
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(233): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 233, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(160): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 20:05:09 --> Undefined variable: results
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(233): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 233, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(160): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 20:10:07 --> Undefined offset: 1
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 221, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(160): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 20:17:22 --> Undefined variable: results
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(234): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 234, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(160): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 20:39:45 --> Undefined variable: results
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(237): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 237, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(160): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 21:56:39 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 10, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(23): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-22 23:07:37 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\home\home_index.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('home/home_index', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(34): view('home/home_index', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 23:08:01 --> Call to a member function first() on array
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(28): App\Models\LicenciandosModel->getTotalLicenciando()
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-22 23:08:09 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\home\home_index.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('home/home_index', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(34): view('home/home_index', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 23:08:22 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\home\home_index.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('home/home_index', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(34): view('home/home_index', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-22 23:09:30 --> Call to a member function first() on array
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(28): App\Models\LicenciandosModel->getTotalLicenciando()
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-22 23:09:46 --> Undefined index: quantidade
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\LicenciandosModel.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 111, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(28): App\Models\LicenciandosModel->getTotalLicenciando()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 23:10:26 --> Undefined index: quantidade
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\LicenciandosModel.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 111, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(28): App\Models\LicenciandosModel->getTotalLicenciando()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-22 23:17:41 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\home\home_index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('home/home_index', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(35): view('home/home_index', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

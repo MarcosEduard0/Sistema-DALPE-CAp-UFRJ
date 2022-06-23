@@ -1,0 +1,45 @@
+CRITICAL - 2022-03-31 00:06:30 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 227, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(135): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->editar('67')
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-31 00:13:20 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\system\Helpers\form_helper.php(303): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 303, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(238): form_dropdown('setor_id[]', Array, Array, 'id="choices-mul...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(135): view('licenciandos/li...', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->editar('67')
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-31 00:19:00 --> Illegal string offset 'setor_id'
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 228, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(83): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-31 00:20:41 --> Undefined variable: licenciandoSetores
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(231): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 231, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(83): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

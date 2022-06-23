@@ -1,0 +1,84 @@
+CRITICAL - 2021-11-21 17:29:43 --> Undefined index: senha
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(46): App\Models\UsuariosModel->passwordHash(Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1456): App\Models\UsuariosModel->beforeUpdate(Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(859): CodeIgniter\BaseModel->trigger('beforeUpdate', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(182): CodeIgniter\Model->update(Array, Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-11-21 17:34:54 --> Undefined index: senha
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(46): App\Models\UsuariosModel->passwordHash(Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1456): App\Models\UsuariosModel->beforeUpdate(Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(859): CodeIgniter\BaseModel->trigger('beforeUpdate', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(182): CodeIgniter\Model->update('1', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-11-21 18:02:01 --> Undefined index: senha
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(46): App\Models\UsuariosModel->passwordHash(Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1456): App\Models\UsuariosModel->beforeUpdate(Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(859): CodeIgniter\BaseModel->trigger('beforeUpdate', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(197): CodeIgniter\Model->update('1', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-11-21 18:02:43 --> Undefined index: senha
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Models\UsuariosModel.php(46): App\Models\UsuariosModel->passwordHash(Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1456): App\Models\UsuariosModel->beforeUpdate(Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(859): CodeIgniter\BaseModel->trigger('beforeUpdate', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(198): CodeIgniter\Model->update('1', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-11-21 18:03:54 --> beforeUpdate não é um callback de Model Event válido.
+#0 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1453): CodeIgniter\Database\Exceptions\DataException::forInvalidMethodTriggered('beforeUpdate')
+#1 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(859): CodeIgniter\BaseModel->trigger('beforeUpdate', Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(183): CodeIgniter\Model->update('1', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-11-21 18:20:24 --> Não há dados para update.
+#0 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(183): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-11-21 18:20:52 --> Return value of CodeIgniter\BaseModel::transformDataToArray() must be of the type array, string returned
+#0 C:\xampp\htdocs\sistemadalpe\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray('2021-11-21 18:2...', 'update')
+#1 C:\xampp\htdocs\sistemadalpe\system\Model.php(646): CodeIgniter\BaseModel->update(Array, '2021-11-21 18:2...')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(183): CodeIgniter\Model->update('ultimo_login', '2021-11-21 18:2...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-21 18:31:40 --> Undefined index: senha
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(175): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 175, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

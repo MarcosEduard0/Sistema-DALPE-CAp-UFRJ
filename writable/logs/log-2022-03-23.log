@@ -1,0 +1,24 @@
+ERROR - 2022-03-23 23:26:27 --> Unknown column 'l.univeridade_id' in 'field list'
+CRITICAL - 2022-03-23 23:26:27 --> Unknown column 'l.univeridade_id' in 'field list'
+#0 C:\xampp\htdocs\sistemadalpe\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(l....', 0)
+#1 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(l....')
+#2 C:\xampp\htdocs\sistemadalpe\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(l....')
+#3 C:\xampp\htdocs\sistemadalpe\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(l....')
+#4 C:\xampp\htdocs\sistemadalpe\app\Models\LicenciandosModel.php(134): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(30): App\Models\LicenciandosModel->getTotalUniversidadePorLicenciando()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-03-23 23:29:44 --> Undefined index: nome
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\home\home_index.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('home/home_index', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(36): view('home/home_index', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

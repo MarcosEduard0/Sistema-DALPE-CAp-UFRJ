@@ -1,0 +1,17 @@
+CRITICAL - 2022-03-21 17:45:14 --> Arquivo inválido: usuarios/documentos_adicionar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('usuarios/docume...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/docume...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(72): view('usuarios/docume...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->adicionar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-21 18:20:00 --> Undefined variable: input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(155): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 155, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('1')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

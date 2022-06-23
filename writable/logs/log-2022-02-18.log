@@ -1,0 +1,51 @@
+CRITICAL - 2022-02-18 01:15:34 --> assinatura não é uma regra válida.
+#0 C:\xampp\htdocs\sistemadalpe\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('assinatura')
+#1 C:\xampp\htdocs\sistemadalpe\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('importCSV', 'importCSV', NULL, Array, Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(142): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('2')
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-18 01:16:05 --> assinatura não é uma regra válida.
+#0 C:\xampp\htdocs\sistemadalpe\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('assinatura')
+#1 C:\xampp\htdocs\sistemadalpe\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('assinatura', 'assinatura', NULL, Array, Array)
+#2 C:\xampp\htdocs\sistemadalpe\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(142): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('2')
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-18 01:36:58 --> Undefined index: assinatura
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(187): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 187, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(165): App\Controllers\Usuarios->apagarAssinatura(Array)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('2')
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-18 01:38:55 --> unlink(public/assets/uploads/): Is a directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(public/a...', 'C:\\xampp\\htdocs...', 189, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(189): unlink('public/assets/u...')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(166): App\Controllers\Usuarios->apagarAssinatura(Array)
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('2')
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-18 01:39:35 --> unlink(public/assets/uploads/): Is a directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(public/a...', 'C:\\xampp\\htdocs...', 189, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(189): unlink('public/assets/u...')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(166): App\Controllers\Usuarios->apagarAssinatura(Array)
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(47): App\Controllers\Usuarios->salvar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->editar('2')
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

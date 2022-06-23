@@ -1,0 +1,59 @@
+CRITICAL - 2021-11-18 11:20:44 --> file_put_contents(https://cadastrodalpe.cap.ufrj.br/public/assets/img/file.pdf): failed to open stream: HTTP wrapper does not support writeable connections
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_put_conten...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Documentos.php(160): file_put_contents('https://cadastr...', '%PDF-1.7\n1 0 ob...')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(824): App\Controllers\Documentos->emitir('171', '1')
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-18 11:20:51 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266342400 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-18 11:21:39 --> file_put_contents(https://cadastrodalpe.cap.ufrj.br/public/assets/img/file.pdf): failed to open stream: HTTP wrapper does not support writeable connections
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_put_conten...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Documentos.php(160): file_put_contents('https://cadastr...', '%PDF-1.7\n1 0 ob...')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(824): App\Controllers\Documentos->emitir('171', '1')
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-18 11:21:45 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266342400 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-18 11:21:58 --> file_put_contents(https://cadastrodalpe.cap.ufrj.br/public/assets/img/file.pdf): failed to open stream: HTTP wrapper does not support writeable connections
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_put_conten...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\ci4\app\Controllers\Documentos.php(160): file_put_contents('https://cadastr...', '%PDF-1.7\n1 0 ob...')
+#2 C:\xampp\htdocs\ci4\system\CodeIgniter.php(824): App\Controllers\Documentos->emitir('171', '1')
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci4\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-18 11:22:03 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266342400 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-18 12:11:20 --> Illegal string offset 'compress'
+#0 C:\xampp\htdocs\ci4\app\Libraries\dompdf\src\Adapter\CPDF.php(1183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 1183, Array)
+#1 C:\xampp\htdocs\ci4\app\Libraries\dompdf\src\Dompdf.php(928): Dompdf\Adapter\CPDF->stream('teste.pdf', '%PDF-1.7\n1 0 ob...')
+#2 C:\xampp\htdocs\ci4\app\Controllers\Documentos.php(173): Dompdf\Dompdf->stream('teste.pdf', '%PDF-1.7\n1 0 ob...')
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(824): App\Controllers\Documentos->teste()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\ci4\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-18 12:39:45 --> Illegal string offset 'compress'
+#0 C:\xampp\htdocs\ci4\app\Libraries\dompdf\src\Adapter\CPDF.php(1211): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 1211, Array)
+#1 C:\xampp\htdocs\ci4\app\Libraries\dompdf\src\Dompdf.php(955): Dompdf\Adapter\CPDF->output('teste.pdf')
+#2 C:\xampp\htdocs\ci4\app\Controllers\Documentos.php(189): Dompdf\Dompdf->output('teste.pdf')
+#3 C:\xampp\htdocs\ci4\system\CodeIgniter.php(824): App\Controllers\Documentos->teste()
+#4 C:\xampp\htdocs\ci4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#5 C:\xampp\htdocs\ci4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\ci4\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-18 17:58:03 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 94, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(41): App\Controllers\Licenciandos->salvar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

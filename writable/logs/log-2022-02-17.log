@@ -1,0 +1,812 @@
+CRITICAL - 2022-02-17 13:34:13 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(133): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 14:21:59 --> Call to undefined function tab_index()
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include()
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#3 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): view('licenciandos/li...', Array)
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-17 14:22:04 --> Undefined variable: max_size_human
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 15:15:57 --> Undefined property: App\Controllers\Licenciandos::$input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 15:16:34 --> Undefined property: App\Controllers\Licenciandos::$input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 15:16:37 --> Undefined property: App\Controllers\Licenciandos::$input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 15:16:40 --> Undefined property: App\Controllers\Licenciandos::$input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 15:16:41 --> Undefined property: App\Controllers\Licenciandos::$input
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(134): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 15:23:08 --> Undefined variable: baseUrl
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(144): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 15:32:17 --> Arquivo inválido: licenciandos/importar_index.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(146): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 15:32:28 --> Arquivo inválido: licenciandos/importar_index.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(146): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 15:33:49 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(163): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->process_import()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 16:09:29 --> fopen(../public/assets/csvfile/1645124969_1adabc5dcbe6962bfaa9.csv): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../public...', 'C:\\xampp\\htdocs...', 168, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(168): fopen('../public/asset...', 'r')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 16:09:56 --> fopen(../public/assets/csvfile/1645124996_fcfa2b5e6d050e10a409.csv): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../public...', 'C:\\xampp\\htdocs...', 168, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(168): fopen('../public/asset...', 'r')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 16:10:27 --> fopen(../public/assets/csvfile/1645125027_d83fb65e2b2286f2a653.csv): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../public...', 'C:\\xampp\\htdocs...', 168, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(168): fopen('../public/asset...', 'r')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 16:21:47 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(195): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 195, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:22:32 --> Undefined offset: 1
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(195): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 195, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:22:49 --> Undefined offset: 1
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(195): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 195, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:23:08 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(195): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 195, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:23:32 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(195): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 195, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:28:17 --> Undefined index: email
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(185): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:28:31 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(185): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:29:03 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(185): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:29:55 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(185): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 16:30:21 --> Undefined offset: 0
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(185): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 17:22:57 --> Undefined offset: 12
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(187): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 187, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 18:02:06 --> Array to string conversion
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(199): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 199, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 18:39:21 --> number_format() expects parameter 1 to be float, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'number_format()...', 'C:\\xampp\\htdocs...', 224, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Documentos.php(224): number_format('', 2, '.', '.')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Documentos.php(123): App\Controllers\Documentos->valorPorExtenso('', false, false)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Documentos->emitir('183', '1')
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Documentos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 18:43:09 --> Undefined variable: count
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 18:48:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\sistemadalpe\app\Models\SetoresModel.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(198): App\Models\SetoresModel->getIdByName('Ingl\xC3\xAAs, L\xC3\xADngu...')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 18:52:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(198): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 198, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar_index()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 19:42:54 --> Call to undefined function App\Controllers\random_string()
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 19:46:32 --> fopen(C:\xampp\htdocs\sistemadalpe\local/.7WsgHkElmf6xiMTSL8Q1e3pho): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(C:\\xampp\\...', 'C:\\xampp\\htdocs...', 211, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(211): fopen('C:\\xampp\\htdocs...', 'w')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 19:51:50 --> fopen(public/assets/local/.0X7MuOvgzocj51mdH3ipUxklY): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(public/as...', 'C:\\xampp\\htdocs...', 211, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(211): fopen('public/assets/l...', 'w')
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 19:52:53 --> Call to undefined function App\Controllers\write_file()
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(136): App\Controllers\Licenciandos->process_import()
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 19:54:27 --> Undefined property: App\Controllers\Licenciandos::$session
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(280): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 280, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 19:55:36 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(274): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 19:56:31 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(275): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:00:35 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 10, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:01:40 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(282): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:02:38 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(275): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:02:50 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(282): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:03:13 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(275): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:03:14 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(275): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:03:28 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(282): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:05:40 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(282): redirect('licenciandos/im...')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:13:03 --> Undefined property: App\Controllers\Licenciandos::$load
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(292): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 292, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 20:17:31 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:06 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:07 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:08 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:13 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:13 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:19:16 --> Undefined variable: result
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 33, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:20:02 --> Arquivo inválido: licenciandos/importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:21:43 --> Arquivo inválido: licenciandos/importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:23:55 --> Arquivo inválido: licenciandos/importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:24:15 --> Arquivo inválido: licenciandos/importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:24:55 --> Arquivo inválido: licenciandos/importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 20:28:55 --> Undefined property: stdClass::$user
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(58): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 58, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 20:29:51 --> Undefined property: stdClass::$nome_completo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_importar.php(58): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 58, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(147): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:14:02 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:14:58 --> Undefined variable: teste
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 21:15:24 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:18:24 --> Undefined variable: setores
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:19:11 --> Undefined variable: setores
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): view('licenciandos/li...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:21:31 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): redirect('/Licenciandos')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 21:21:40 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): redirect('/Licenciandos/')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 21:21:47 --> 
+#0 C:\xampp\htdocs\sistemadalpe\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(840): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): redirect('/Licenciandos/')
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 21:22:50 --> Accessing static property App\Controllers\Licenciandos::$teste as non static
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Accessing stati...', 'C:\\xampp\\htdocs...', 58, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(802): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 21:25:28 --> Undefined property: App\Controllers\Licenciandos::$load
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(48): App\Controllers\BaseController->render()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 21:26:49 --> Undefined property: App\Controllers\Licenciandos::$data
+#0 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(48): App\Controllers\BaseController->render()
+#2 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-17 21:30:38 --> Undefined variable: body
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\View\View.php(230): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(47): view('licenciandos/li...', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-17 21:31:21 --> Undefined variable: body
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\View\View.php(230): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(30): view('licenciandos/li...', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-17 21:31:22 --> Undefined variable: body
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\View\View.php(230): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(30): view('licenciandos/li...', Array)
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-17 21:38:36 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\licenciandos_adicionar.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(46): view('licenciandos/li...')
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->adicionar()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 21:52:18 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\import_results.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(298): view('licenciandos/im...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:01:12 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(22): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:01:29 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(22): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:01:30 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(22): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:01:53 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_index.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(22): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:02:11 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\usuarios\usuarios_index.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 4, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(22): view('usuarios/usuari...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->index()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 22:24:08 --> Undefined variable: title
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Usuarios.php(72): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Usuarios->login_index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-17 22:24:32 --> Undefined variable: titulo
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\layout.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 52, Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('layout', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\BaseController.php(52): view('layout', Array)
+#5 C:\xampp\htdocs\sistemadalpe\app\Controllers\Home.php(19): App\Controllers\BaseController->render()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-17 22:31:01 --> Arquivo inválido: licenciandos/licenciandos_importar.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/li...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/li...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(146): view('licenciandos/li...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->importar()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 22:41:48 --> Arquivo inválido: licenciandos/import_results.php
+#0 C:\xampp\htdocs\sistemadalpe\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('licenciandos/im...')
+#1 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#2 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#3 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#4 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-17 23:17:05 --> Call to undefined function img()
+#0 C:\xampp\htdocs\sistemadalpe\app\Views\licenciandos\import\results.php(69): iconbar(Array)
+#1 C:\xampp\htdocs\sistemadalpe\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\sistemadalpe\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\sistemadalpe\system\Common.php(1097): CodeIgniter\View\View->render('licenciandos/im...', Array, true)
+#4 C:\xampp\htdocs\sistemadalpe\app\Controllers\Licenciandos.php(295): view('licenciandos/im...', Array)
+#5 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(824): App\Controllers\Licenciandos->import_results()
+#6 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Licenciandos))
+#7 C:\xampp\htdocs\sistemadalpe\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistemadalpe\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
