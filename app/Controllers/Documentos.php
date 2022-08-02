@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\DocumentosModel;
 use App\Models\LicenciandosModel;
 use App\Models\SetoresModel;
+use App\Models\LicenciandoSetorModel;
+
 use Dompdf\Dompdf;
 
 
@@ -20,6 +22,7 @@ class Documentos extends BaseController
         $this->documentosModel = new DocumentosModel();
         $this->licenciandosModel = new LicenciandosModel();
         $this->setoresModal = new SetoresModel();
+        $this->licenciandoSetorModel = new LicenciandoSetorModel();
     }
 
     /**
@@ -119,27 +122,33 @@ class Documentos extends BaseController
      * Função do controlador para emissao de documentos
      *
      */
-    public function emitir($id, $doc)
+    public function emitir($licendiando_id, $setor_id, $doc)
     {
 
         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
         $this->data = [
             'titulo' => 'Todos os licenciandos',
-            'licenciando' => $this->licenciandosModel->getLicenciandosCompleto($id),
+            'licenciando' => $this->licenciandosModel->getLicenciandosCompleto($licendiando_id),
+            'setor' =>  $this->licenciandoSetorModel->find($setor_id),
             'documento' => $this->documentosModel->getDocumentos($doc),
         ];
 
-        $documentoSetor = $this->request->getVar('documentoSetor');
+        // $documentoSetor = $this->request->getVar('documentoSetor');
+        $documentoSetor = $this->setoresModal->find($this->data['setor']['setor_id'])['nome'];
 
 
         $this->data['documento']['nome'] = mb_strtoupper($this->data['documento']['nome']);
         $conteudo =  $this->data['documento']['conteudo'];
+        $horas_estagios = $this->data['setor']['horas_estagio'] . ' (' . $this->valorPorExtenso($this->data['setor']['horas_estagio'], false, false) . ')';
+        $dataCadastro = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_cadastro']));
+        if (empty($dataCadastro)) {
+            $dataCadastro = "XX/XX/XXXX";
+        }
 
-        $horas_estagios = $this->data['licenciando']['horas_estagio'] . ' (' . $this->valorPorExtenso($this->data['licenciando']['horas_estagio'], false, false) . ')';
-        $dataCadastro = strftime('%d/%m/%Y', strtotime($this->data['licenciando']['data_cadastro']));
-        $dataTermino = strftime('%d/%m/%Y', strtotime($this->data['licenciando']['data_termino']));
-        $anoTermino = strftime('%Y', strtotime($this->data['licenciando']['data_termino']));
+
+        $dataTermino = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_termino']));
+        $anoTermino = strftime('%Y', strtotime($this->data['setor']['data_termino']));
 
         $conteudo = str_replace('[NOME]', mb_strtoupper($this->data['licenciando']['nome_completo']), $conteudo);
         $conteudo = str_replace('[DRE]', mb_strtoupper($this->data['licenciando']['dre']), $conteudo);
@@ -151,7 +160,7 @@ class Documentos extends BaseController
         $conteudo = str_replace('[CEP]', mb_strtoupper($this->data['licenciando']['cep']), $conteudo);
         $conteudo = str_replace('[SETOR]', mb_strtoupper($documentoSetor), $conteudo);
         $conteudo = str_replace('[UNIVERSIDADE]', mb_strtoupper($this->data['licenciando']['sigla_universidade']), $conteudo);
-        $conteudo = str_replace('[PROFESSOR]', mb_strtoupper($this->data['licenciando']['professor']), $conteudo);
+        $conteudo = str_replace('[PROFESSOR]', mb_strtoupper($this->data['setor']['professor']), $conteudo);
         $conteudo = str_replace('[DATA_CADASTRO]', $dataCadastro, $conteudo);
         $conteudo = str_replace('[HORAS_ESTAGIO]', $horas_estagios, $conteudo);
         $conteudo = str_replace('[DATA_TERMINO]', $dataTermino, $conteudo);
