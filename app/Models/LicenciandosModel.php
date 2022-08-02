@@ -12,7 +12,7 @@ class LicenciandosModel extends Model
     protected $primaryKey = 'licenciando_id';
     protected $allowedFields = [
         'dre', 'nome_completo', 'nome_social', 'email',
-        'telefone1', 'telefone2', 'endereco_id', 'universidade_id', 'professor', 'data_cadastro', 'horas_estagio', 'data_termino', 'observacao'
+        'telefone1', 'telefone2', 'endereco_id', 'universidade_id', 'observacao'
     ];
 
     //metodo get

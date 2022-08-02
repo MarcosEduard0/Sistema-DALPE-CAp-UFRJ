@@ -18,7 +18,6 @@
                             <th>DRE</th>
                             <th>Universidade</th>
                             <th>Setor Curricular</th>
-                            <th>Prof. Prática</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -30,10 +29,9 @@
                                     <td><?= $licenciando['dre'] ?></td>
                                     <td><?= (isset($licenciando['sigla_universidade'])) ? $licenciando['sigla_universidade'] : 'Nenhuma'  ?></td>
                                     <td><?= $licenciando['setores'] ?></td>
-                                    <td><?= (strlen($licenciando['professor']) > 1 ? $licenciando['professor'] : 'Nenhum(a)') ?></td>
                                     <td class="text-center" style="color: white;">
                                         <div class="actions">
-                                            <a href="<?= base_url('/licenciandos/editar/' . $licenciando["licenciando_id"]) ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="<?= base_url('/licenciandos/editar/' . $licenciando["licenciando_id"]) . '/' . $licenciando['setores_id'] ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a id="<?= $licenciando['licenciando_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($licenciando) ?>'><i class="fa fa-trash-alt" aria-hidden="true"></i></a>
                                         </div>
                                     </td>

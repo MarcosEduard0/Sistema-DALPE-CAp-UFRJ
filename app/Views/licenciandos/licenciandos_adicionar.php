@@ -1,5 +1,6 @@
-<?php if (isset($licenciando)) $baseUrl = 'editar/' . $licenciando['licenciando_id'];
+<?php if (isset($licenciando)) $baseUrl = 'editar/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id;
 else $baseUrl = 'adicionar'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <div class="content">
     <div class="row">
@@ -23,6 +24,33 @@ else $baseUrl = 'adicionar'; ?>
                     <p class="description text-center">
                         <?= isset($licenciando['observacao']) ? $licenciando['observacao'] : '' ?>
                     </p>
+                    <div class="row" style="justify-content: center; text-align-last: center;">
+                        <div class="col-md-6 px-1">
+                            <?php if (isset($licenciando)) : ?>
+                                <form class="needs-validation" novalidate action="<?= base_url('/licenciandos/setor_select/' . $licenciando['licenciando_id']) ?>" method="post">
+                                    <?php
+                                    // $setores_options = array(0 => 'Nenhum');
+                                    $setores_options = array();
+                                    foreach ($licenciandoSetores as $licenciandoSetor) {
+                                        $setores_options[$licenciandoSetor['id']] = $licenciandoSetor['nome'];
+                                    }
+                                    $field = 'licenciando_setor';
+                                    $value = set_value($field, null, FALSE);
+
+                                    echo form_dropdown(
+                                        $field,
+                                        $setores_options,
+                                        $licenciandoSetor_id,
+                                        // 'class="custom-select mr-sm-2" required',
+                                        'onchange="this.form.submit()" onmouseup="this.form.submit" class="form-control"',
+                                    );
+                                    ?>
+                                </form>
+                            <?php endif ?>
+                        </div>
+
+
+                    </div>
                 </div>
                 <?php if (isset($licenciando)) : ?>
                     <div class="card-footer">
@@ -31,13 +59,13 @@ else $baseUrl = 'adicionar'; ?>
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 col-6 ml-auto">
 
-                                    <h5><?= $licenciando['horas_estagio'] ?><br><small>Horas</small></h5>
+                                    <h5><?= $setor_data['horas_estagio'] ?><br><small>Horas</small></h5>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
                                     <h5><?= $licenciando['universidade_sigla'] ?><br><small>Instituição</small></h5>
                                 </div>
                                 <div class="col-lg-3 mr-auto">
-                                    <h5><?= (strtotime($licenciando['data_termino']) <= strtotime(date('Y-m-j'))) ? "NÃO" :  "SIM" ?><br><small>Concluinte</small></h5>
+                                    <h5><?= (strtotime($setor_data['data_termino']) <= strtotime(date('Y-m-j'))) ? "NÃO" :  "SIM" ?><br><small>Concluinte</small></h5>
                                 </div>
                             </div>
                         </div>
@@ -47,26 +75,22 @@ else $baseUrl = 'adicionar'; ?>
             <?php if (isset($licenciando)) : ?>
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Documentos</h4>
+                        <h4 class="card-title" style="padding-left: 30px;">Documentos</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled team-members">
                             <?php foreach ($documentos as $documento) : ?>
                                 <li>
                                     <div class="row">
-                                        <div class="col-md-1 col-2">
+                                        <div class="col-md-2 pl-5">
                                             <div class="avatar-documento">
                                                 <i class="fa fa-file-alt fa-2x "></i>
                                             </div>
                                         </div>
-                                        <div class="col-md-7 col-10">
-                                            <?= $documento['nome'] ?>
-                                        </div>
-                                        <div class="col-md-3 col-3 text-right">
-                                            <a id="<?= $documento['documento_id'] ?>" type="button" data-toggle="modal" data-detalhes='<?= json_encode($documento) ?>' data-target="#documentoModal" onclick="documentoModel(<?= $licenciando['licenciando_id'] ?>,this.id, '<?= base_url() ?>')">
-                                                <btn class="btn btn-sm btn-outline-info btn-round btn-icon">
-                                                    <i class="fa fa-download"></i>
-                                                </btn>
+                                        <div class="col-md-10">
+                                            <a href="<?= base_url('/documentos/emitir/' . $licenciando['licenciando_id']  . '/' . $licenciandoSetor_id . '/' . $documento['documento_id']) ?>">
+
+                                                <?= $documento['nome'] ?>
                                             </a>
 
                                         </div>
@@ -191,58 +215,122 @@ else $baseUrl = 'adicionar'; ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-
-                            <div class="col-md-2 pr-1">
-                                <div class="form-group">
-                                    <label for="horas_estagio">Horas de estagio:</label>
-                                    <input type="text" class="form-control" value="<?= isset($licenciando['horas_estagio']) ? $licenciando['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
-                                </div>
-                            </div>
-                            <div class="col-md-3 px-1">
-                                <div class="form-group">
-                                    <label for="data_cadastro">Data de cadastro:</label>
-                                    <input type="date" class="form-control" value="<?= isset($licenciando['data_cadastro']) ? $licenciando['data_cadastro'] : date('Y-m-d') ?>" name="data_cadastro">
-                                </div>
-                            </div>
-                            <div class="col-md-3 px-1">
-                                <div class="form-group">
-                                    <label for="data_termino">Data Conclusão:</label>
-                                    <input type="date" class="form-control" value="<?= isset($licenciando['data_termino']) ? $licenciando['data_termino'] : set_value('data_termino') ?>" name="data_termino">
-                                </div>
-                            </div>
-                            <div class="col-md-4 pl-1">
-                                <div class="form-group">
-                                    <label for="professor">Professor(a) de Prática</label>
-                                    <input type="text" class="form-control" value="<?= isset($licenciando['professor']) ? $licenciando['professor'] : set_value('professor') ?>" name="professor">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="setor_id">Setor Curricular</label>
-                                    <?php
-                                    $setores_options = array();
-                                    foreach ($setores as $setor) {
-                                        $setores_options[$setor['setor_id']] = $setor['nome'];
-                                    }
-                                    if (isset($licenciando)) {
-                                        $department_options = array();
-                                        foreach ($licenciandoSetores as $licenciandoSetor) {
-                                            $department_options[$licenciandoSetor['setor_id']] = $licenciandoSetor['setor_id'];
-                                        }
-                                    }
-                                    $field = 'setor_id';
-                                    $value = set_value($field, isset($licenciando) ? $department_options : '', FALSE);
-                                    echo form_dropdown('setor_id[]', $setores_options, $value, 'id="choices-multiple-remove-button" multiple required placeholder="Digite para pesquisar..."');
-                                    ?>
-                                    <div class="invalid-feedback">
-                                        Setor Curricular é obrigatório
+                        <?php if (!isset($licenciando)) : ?>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="professor">Quant. Setores</label>
+                                        <input id="numeros" class="form-control" type="number" min="1" max="20" value="1" />
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div id="testando">
+                                <div class="row" name="teste">
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label for="professor">Setores</label>
+                                            <?php
+                                            $setores_options = array();
+                                            foreach ($setores as $setor) {
+                                                $setores_options[$setor['setor_id']] = $setor['nome'];
+                                            }
+                                            $field = 'setor_id';
+                                            $value = set_value($field, isset($licenciando) ? $setores_options : '', FALSE);
+                                            echo form_dropdown(
+                                                'setor_id[]',
+                                                $setores_options,
+                                                $value,
+                                                'tabindex="-1" class="custom-select mr-sm-2" required'
+                                            );
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 px-1">
+                                        <div class="form-group">
+                                            <label for="horas_estagio">Horas de estagio:</label>
+                                            <input type="text" class="form-control" name="horas_estagio[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 px-1">
+                                        <div class="form-group">
+                                            <label for="data_cadastro">Data de cadastro:</label>
+                                            <input type="date" class="form-control" value="<?= date('Y-m-d') ?>" name="data_cadastro[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 px-1">
+                                        <div class="form-group">
+                                            <label for="data_termino">Data Conclusão:</label>
+                                            <input type="date" class="form-control" name="data_termino[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <div class="form-group">
+                                            <label for="professor">Professor(a) de Prática</label>
+                                            <input type="text" class="form-control" id="professor" name="professor[]">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <?php endif;  ?>
+                        <?php if (isset($licenciando)) : ?>
+                            <div class="row">
+                                <div class="col-md-2 pr-1">
+                                    <div class="form-group">
+                                        <label for="horas_estagio">Horas de estagio:</label>
+                                        <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 px-1">
+                                    <div class="form-group">
+                                        <label for="data_cadastro">Data de cadastro:</label>
+                                        <input type="date" class="form-control" value="<?= isset($setor_data['data_cadastro']) ? $setor_data['data_cadastro'] : date('Y-m-d') ?>" name="data_cadastro">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 px-1">
+                                    <div class="form-group">
+                                        <label for="data_termino">Data Conclusão:</label>
+                                        <input type="date" class="form-control" value="<?= isset($setor_data['data_termino']) ? $setor_data['data_termino'] : set_value('data_termino') ?>" name="data_termino">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-1">
+                                    <div class="form-group">
+                                        <label for="professor">Professor(a) de Prática</label>
+                                        <input type="text" class="form-control" value="<?= isset($setor_data['professor']) ? $setor_data['professor'] : set_value('professor') ?>" name="professor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="setor_id">Setor Curricular</label>
+                                        <?php
+                                        $setores_options = array();
+                                        foreach ($setores as $setor) {
+                                            $setores_options[$setor['setor_id']] = $setor['nome'];
+                                        }
+                                        if (isset($licenciando)) {
+                                            $department_options = array();
+                                            foreach ($licenciandoSetores as $licenciandoSetor) {
+                                                $department_options[$licenciandoSetor['setor_id']] = $licenciandoSetor['setor_id'];
+                                            }
+                                        }
+                                        $field = 'setor_id';
+                                        $value = set_value($field, isset($licenciando) ? $department_options : '', FALSE);
+                                        echo form_dropdown(
+                                            'setor_id[]',
+                                            $setores_options,
+                                            $value,
+                                            'id="choices-multiple-remove-button" multiple required placeholder="Digite para pesquisar..."'
+                                        );
+                                        ?>
+                                        <div class="invalid-feedback">
+                                            Setor Curricular é obrigatório
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif ?>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -253,6 +341,7 @@ else $baseUrl = 'adicionar'; ?>
                         </div>
                         <input type="hidden" name="licenciando_id" value="<?= isset($licenciando['licenciando_id']) ? $licenciando['licenciando_id'] : set_value('licenciando_id') ?>">
                         <input type="hidden" name="endereco_id" value="<?= isset($licenciando['endereco_id']) ? $licenciando['endereco_id'] : set_value('endereco_id') ?>">
+                        <input type="hidden" name="licenciandoSetor_id" value="<?= isset($licenciandoSetor_id) ? $licenciandoSetor_id : set_value('licenciandoSetor_id') ?>">
                         <div class="row">
                             <div class="update ml-auto mr-auto">
                                 <input type="submit" name="submit" class="btn btn-primary btn-round" value="<?= isset($licenciando) ? 'Atualizar' : 'Adicionar' ?>">

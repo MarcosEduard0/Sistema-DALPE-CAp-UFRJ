@@ -36,21 +36,28 @@ class Licenciandos extends BaseController
         $i = 0;
         foreach ($this->data['licenciandos'] as $licenciando) {
             $this->data['setores'][$i] = $this->licenciandoSetorModel->getLicenciandosSetores($licenciando['licenciando_id']);
-            if (empty($this->data['setores'][$i]))
-                $this->data['setores'][$i] = 'Nenhum(a)';
-            elseif (count($this->data['setores'][$i]) == 1) {
-                $this->data['setores'][$i] = $this->setoresModal->getSetores($this->data['setores'][$i][0]['setor_id'])['nome'];
+
+            if (empty($this->data['setores'][$i])) {
+                $this->data['setores'][$i] = array(
+                    'id'  => 0,
+                    'setor' => "Nenhum(a)"
+                );
+                $this->data['licenciandos'][$i]['setores'] = "Nenhum(a)";
+                $this->data['licenciandos'][$i]['setores_id'] = 0;
             } else {
                 $nomeSetor = array();
                 $j = 0;
+
                 foreach ($this->data['setores'][$i] as $setor) {
-                    $nomeSetor[$j] = $this->setoresModal->getSetores($setor['setor_id'])['nome'];
+                    $nomeSetor[$j] = $setor['nome'];
                     $j++;
                 }
                 $nomeSetor = implode(", ", $nomeSetor);
-                $this->data['setores'][$i] =  $nomeSetor;
+
+                $this->data['licenciandos'][$i]['setores'] =  $nomeSetor;
+                $this->data['licenciandos'][$i]['setores_id'] = $this->data['setores'][$i][0]['id'];
             }
-            $this->data['licenciandos'][$i]['setores'] = $this->data['setores'][$i];
+
             $i++;
         }
 
@@ -59,18 +66,16 @@ class Licenciandos extends BaseController
         session()->set($sessionData);
         return $this->render();
     }
-
+    public function setor_select($licenciando_id)
+    {
+        $licenciando_setor = $this->request->getVar('licenciando_setor');
+        return redirect()->to('licenciandos/editar/' . $licenciando_id . '/' . $licenciando_setor);
+    }
     public function adicionar()
     {
-        $setores = $this->setoresModal->getSetores();
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
         $this->data['titulo'] = 'Adicionar Licenciando';
         $this->data['setores'] = $this->setoresModal->getSetores();
-        // $i = 0;
-        // foreach ($setores as $setor) {
-        //     $this->data['setores'][$i] = '<option value="' . $setor['setor_id'] . '">' . $setor['nome'] . '</option>';
-        //     $i++;
-        // }
 
         if ($this->request->getMethod() == 'post') {
             $this->salvar();
@@ -84,7 +89,7 @@ class Licenciandos extends BaseController
         return $this->render();
     }
 
-    public function editar($id = null)
+    public function editar($id = null, $licenciandoSetor_id = null)
     {
 
         $this->data['titulo'] = 'Editar Licenciando';
@@ -92,44 +97,28 @@ class Licenciandos extends BaseController
         $this->data['licenciando']['universidade_sigla'] = $this->universidadesModel->getUniversidades($this->data['licenciando']['universidade_id'])['sigla'];
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
         $this->data['documentos'] = $this->documentosModel->getDocumentos();
+        $this->data['licenciandoSetor_id'] = $licenciandoSetor_id;
+
+
 
         $setores = $this->setoresModal->getSetores();
         $this->data['setores'] = $this->setoresModal->getSetores();
         $this->data['licenciando']['licenciando_setor'] = array();
 
         if (!is_null($id)) {
-            $licenciandoSetor = $this->licenciandoSetorModel->getLicenciandosSetores($id);
-            $this->data['licenciandoSetores'] = $licenciandoSetor;
+            $this->data['licenciandoSetores'] = $this->licenciandoSetorModel->getLicenciandosSetores($id);
+            $this->data['setor_data'] = $this->licenciandoSetorModel->find($licenciandoSetor_id);
         }
-        // $i = 0;
-        // $j = 0;
-        // foreach ($setores as $setor) {
-        //     $selected = '';
-        //     if (!is_null($id)) {
-        //         $licenciandoSetor = $this->licenciandoSetorModel->getLicenciandosSetores($id);
-
-        //         foreach ($licenciandoSetor as $data) {
-        //             if ($setor['setor_id'] == $data['setor_id']) {
-        //                 $selected = 'selected';
-        //                 $this->data['licenciando']['licenciando_setor'][$j] = '<option value="' . $setor['nome'] . '"' . $selected . '>' . $setor['nome'] . '</option>';
-        //                 $j++;
-        //                 break;
-        //             }
-        //         }
-        //     }
-        //     $this->data['setores'][$i] = '<option value="' . $setor['setor_id'] . '"' . $selected . '>' . $setor['nome'] . '</option>';
-        //     $i++;
-        // }
 
         if (empty($this->data['licenciando'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar o licenciando com id: " . $id);
         }
 
         if ($this->request->getMethod() == 'post') {
-            $this->salvar();
+            $this->salvar($licenciandoSetor_id);
             if (!isset($this->data['validation'])) {
                 session()->setFlashdata('msg', msgbox('success', 'O licenciando foi atualizado.'));
-                return redirect()->to('licenciandos/editar/' . $id);
+                return redirect()->to('licenciandos/editar/' . $id . '/' . $licenciandoSetor_id);
             }
         }
         $this->data['body'] = view('licenciandos/licenciandos_adicionar',  $this->data);
@@ -138,12 +127,14 @@ class Licenciandos extends BaseController
 
     public function excluir($id = null)
     {
+        $endereco_id = $this->licenciandosModel->find($id)['endereco_id'];
+        $this->enderecoModel->delete($endereco_id);
         $this->licenciandosModel->delete($id);
         session()->setFlashdata('msg', msgbox('success', 'O licenciando foi deletado.'));
         return redirect('licenciandos');
     }
 
-    public function salvar()
+    public function salvar($licenciandoSetor_id = null)
     {
         $dreNovo = $this->request->getVar('dre');
         $licenciandoId = $this->request->getVar('licenciando_id');
@@ -162,7 +153,7 @@ class Licenciandos extends BaseController
                 $this->validation->setRule('dre', 'DRE', 'required|max_length[32]');
         }
 
-        $data = [
+        $dataLicenciando = [
             'licenciando_id' =>  $licenciandoId,
             'dre' => $dreNovo,
             'nome_completo' => $this->request->getVar('nome_completo'),
@@ -172,13 +163,17 @@ class Licenciandos extends BaseController
             'telefone2' => $this->request->getVar('telefone2'),
             'endereco_id' => $enderecoId,
             'universidade_id' => $this->request->getVar('universidade_id'),
-            'setor_id' => $this->request->getVar('setor_id'),
-            'professor' => $this->request->getVar('professor'),
-            // 'data_cadastro' => date('Y-m-d'),
+            'setores_id' => $this->request->getVar('setor_id'),
+            'observacao' => $this->request->getVar('observacao')
+
+        ];
+
+        $dataSetor = [
+            'setor_id' =>  $dataLicenciando['setores_id'],
             'data_cadastro' => $this->request->getVar('data_cadastro'),
             'horas_estagio' => $this->request->getVar('horas_estagio'),
             'data_termino' => $this->request->getVar('data_termino'),
-            'observacao' => $this->request->getVar('observacao'),
+            'professor' => $this->request->getVar('professor'),
         ];
 
         $dataAdress = [
@@ -193,22 +188,75 @@ class Licenciandos extends BaseController
 
 
         if ($this->validation->withRequest($this->request)->run()) {
+
+            // Atualizando informações do setor do licenciando
+            if (!is_null($licenciandoSetor_id)) {
+                $result = $this->licenciandoSetorModel->find($licenciandoSetor_id);
+                $dataSetor['setor_id'] = $result['setor_id'];
+                $dataSetor['id'] =  $result['id'];
+                $this->licenciandoSetorModel->save($dataSetor);
+            }
+
+            // Atualizando/Salvando informações do endereço do licenciando
             $this->enderecoModel->save($dataAdress);
-            if (empty($enderecoId))
-                $data['endereco_id'] = $this->enderecoModel->getLastEnderecoSalvo();
 
-            $this->licenciandosModel->save($data);
-            if (empty($licenciandoId))
-                $data['licenciando_id'] = $this->licenciandosModel->getLastLicenciandoSave();
+            // Caso estaja adicionando um licenciando, pegue o id do ultimo licenciando salvo
+            if (empty($enderecoId)) {
+                $dataLicenciando['endereco_id'] = $this->enderecoModel->getLastEnderecoSalvo();
+            }
 
-            $this->enderecoModel->save($data);
-            $this->licenciandoSetorModel->where(['licenciando_id' => $data['licenciando_id']])->delete();
-            foreach ($data['setor_id'] as $setor_id) {
-                $setor = [
-                    'licenciando_id' => $data['licenciando_id'],
-                    'setor_id' => $setor_id,
-                ];
-                $this->licenciandoSetorModel->insert($setor);
+            // Salvando as informações do licenciando
+            $this->licenciandosModel->save($dataLicenciando);
+
+            // Adicionando as informaçãoes dos setores do licenciando
+            if (empty($licenciandoId)) {
+                $i = 0;
+                $save = $dataSetor;
+                $save['licenciando_id'] =  $this->licenciandosModel->getLastLicenciandoSave();
+                while ($i < count($dataSetor['setor_id'])) {
+                    $save['setor_id'] = $dataSetor['setor_id'][$i];
+                    $save['data_cadastro'] = $dataSetor['data_cadastro'][$i];
+                    $save['horas_estagio'] = $dataSetor['horas_estagio'][$i];
+
+                    $save['data_termino'] = $dataSetor['data_termino'][$i];
+                    $save['professor'] = $dataSetor['professor'][$i];
+
+
+                    $this->licenciandoSetorModel->save($save);
+                    $i++;
+                }
+            }
+
+            if (!is_null($licenciandoSetor_id)) {
+                $dataLicenciandoSetor = $this->licenciandoSetorModel->getLicenciandosSetores($licenciandoId);
+                $newSetoresId = array();
+                $oldSetoresId = $dataLicenciando['setores_id'];
+
+                foreach ($dataLicenciandoSetor as $licenciando_setor) {
+                    array_push($newSetoresId, $licenciando_setor['setor_id']);
+                }
+
+
+                $adicionar = array_diff($oldSetoresId, $newSetoresId);
+                $remover = array_diff($newSetoresId, $oldSetoresId);
+
+
+                $dataSetorSave['licenciando_id'] = $licenciandoId;
+                if (count($adicionar) > 0) {
+                    foreach ($adicionar as $id) {
+                        $dataSetorSave['setor_id'] = $id;
+                        $this->licenciandoSetorModel->save($dataSetorSave);
+                    }
+                }
+                if (count($remover) > 0) {
+                    foreach ($remover as $id) {
+                        $dataSetorSave['setor_id'] = $id;
+                        $this->licenciandoSetorModel->where([
+                            'licenciando_id' => $dataSetorSave['licenciando_id'],
+                            'setor_id' => $dataSetorSave['setor_id']
+                        ])->delete();
+                    }
+                }
             }
         } else {
             $this->data['validation'] = $this->validation;
