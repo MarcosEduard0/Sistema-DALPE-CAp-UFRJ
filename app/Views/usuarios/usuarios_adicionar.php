@@ -9,7 +9,6 @@ else $baseUrl = 'adicionar'; ?>
                 <div class="card card-user">
                     <div class="card-header">
                         <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-                        <?= session()->getFlashdata('msg') ?>
                         <!-- <h5 class="card-title"></h5> -->
                     </div>
                     <div class="card-body">

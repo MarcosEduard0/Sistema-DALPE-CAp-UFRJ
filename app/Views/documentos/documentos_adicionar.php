@@ -10,7 +10,6 @@ else $baseUrl = 'adicionar'; ?>
                     </div>
                     <div class="card-body ">
                         <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-                        <?= session()->getFlashdata('msg') ?>
 
                         <div class="form-row">
                             <div class="form-group col-md-12">

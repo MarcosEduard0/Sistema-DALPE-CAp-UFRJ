@@ -11,7 +11,6 @@ else $baseUrl = 'adicionar'; ?>
                 </div> -->
                     <div class="card-body ">
                         <div style="padding-top: 2%;">
-                            <?= session()->getFlashdata('msg') ?>
                             <?php if (isset($validation)) echo $validation->listErrors(); ?>
                         </div>
                         <div class="form-row">

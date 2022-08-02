@@ -1,6 +1,9 @@
 <?php if (isset($licenciando)) $baseUrl = 'editar/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id;
 else $baseUrl = 'adicionar'; ?>
 
+
+
+
 <div class="content">
     <div class="row">
         <div class="col-md-4">
@@ -85,8 +88,7 @@ else $baseUrl = 'adicionar'; ?>
                                             </div>
                                         </div>
                                         <div class="col-md-10">
-                                            <a href="<?= base_url('/documentos/emitir/' . $licenciando['licenciando_id']  . '/' . $licenciandoSetor_id . '/' . $documento['documento_id']) ?>">
-
+                                            <a target="_blank" href="<?= base_url('/documentos/emitir/' . $licenciando['licenciando_id']  . '/' . $licenciandoSetor_id . '/' . $documento['documento_id']) ?>">
                                                 <?= $documento['nome'] ?>
                                             </a>
 
@@ -104,7 +106,6 @@ else $baseUrl = 'adicionar'; ?>
             <div class="card card-user">
                 <div class="card-header">
                     <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-                    <?= session()->getFlashdata('msg') ?>
                     <!-- <h5 class="card-title"></h5> -->
                 </div>
                 <div class="card-body">

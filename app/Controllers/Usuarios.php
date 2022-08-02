@@ -179,7 +179,7 @@ class Usuarios extends BaseController
                     }
                 } else {
                     // $this->data['validation'] = $this->validation;
-                    session()->setFlashdata('msg', msgbox('error', 'A assinatura não pode ser carregada.'));
+                    session()->setFlashdata('msg', msgbox('danger', 'A assinatura não pode ser carregada.'));
                 }
             }
         }
@@ -231,7 +231,7 @@ class Usuarios extends BaseController
                 return redirect('home');
             }
         }
-        session()->setFlashdata('msg', msgbox('error', 'Usuário e/ou senha incorretos.'));
+        session()->setFlashdata('msg', msgbox('danger', 'login'));
         return redirect()->to('login');
     }
 

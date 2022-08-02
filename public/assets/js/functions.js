@@ -35,3 +35,25 @@ function documentoModel(licenciando_id,documento_id, setor_id, baseUrl) {
     
 }
 
+demo = {
+     
+    showNotification: function(from, align, msg, color) {
+        icone = "fa fa-check-circle"
+        if (color == 'danger'){
+            icone = "fa fa-exclamation-circle";
+        }
+      $.notify({
+        icon: icone,
+        message: msg
+  
+      }, {
+        type: color,
+        timer: 5000,
+        placement: {
+          from: from,
+          align: align
+        }
+      });
+    }
+  
+  };

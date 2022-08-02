@@ -134,9 +134,11 @@ class Documentos extends BaseController
             'documento' => $this->documentosModel->getDocumentos($doc),
         ];
 
-        // $documentoSetor = $this->request->getVar('documentoSetor');
-        $documentoSetor = $this->setoresModal->find($this->data['setor']['setor_id'])['nome'];
+        if (empty($this->data['setor']) || empty($licenciando) || empty($doc)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
+        }
 
+        $documentoSetor = $this->setoresModal->find($this->data['setor']['setor_id'])['nome'];
 
         $this->data['documento']['nome'] = mb_strtoupper($this->data['documento']['nome']);
         $conteudo =  $this->data['documento']['conteudo'];
@@ -187,7 +189,7 @@ class Documentos extends BaseController
         // Converte o HTML para PDF
         $dompdf->render();
 
-        $dompdf->stream($this->data['documento']['nome'], array('Attachment' => true));
+        $dompdf->stream($this->data['documento']['nome'], array('Attachment' => false));
     }
 
     public function removerFormatacaoNumero($strNumero)

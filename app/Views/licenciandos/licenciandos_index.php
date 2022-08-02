@@ -1,4 +1,3 @@
-<?= session()->getFlashdata('msg') ?>
 <br>
 <div class="col-md-10">
     <div class="credits ml-auto" role="toolbar" aria-label="Toolbar with button groups">
