@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\LicenciandosModel;
 use App\Models\LicenciandoSetorModel;
+use App\Models\DocumentosModel;
+use App\Models\UniversidadesModel;
 
 // require_once "dompdf/autoload.inc.php";
 
@@ -16,6 +18,8 @@ class Home extends BaseController
     {
         $this->licenciandosModel = new LicenciandosModel();
         $this->licenciandoSetorModel = new LicenciandoSetorModel();
+        $this->documentosModel = new DocumentosModel();
+        $this->universidadesModel = new UniversidadesModel();
     }
 
     /**
@@ -29,7 +33,9 @@ class Home extends BaseController
             'titulo' =>  'Inicio',
             'quantLicenciando' => $this->licenciandosModel->getTotalLicenciando()['quantidade'],
             'quantSetores' => $this->licenciandosModel->getTotalSetoresPorLicenciando(),
-            'quantUniversidades' => $this->licenciandosModel->getTotalUniversidadePorLicenciando(),
+            'universidadeLicenciando' => $this->licenciandosModel->getTotalUniversidadePorLicenciando(),
+            'quantUniversidades' => count($this->universidadesModel->find()),
+            'quantDocumentos' => count($this->documentosModel->find()),
         ];
         $sessionData['posicao'] = 'Home';
         session()->set($sessionData);
