@@ -22,12 +22,12 @@ function deleteModal(id) {
 
 }
 
-function documentoModel(licenciando_id,documento_id,baseUrl) {
+function documentoModel(licenciando_id,documento_id, setor_id, baseUrl) {
 
     var data = document.getElementById(documento_id);
     var json = JSON.parse(data.getAttribute('data-detalhes'));
     data = document.getElementById('document_action');
-    data.action = baseUrl + '/documentos/emitir/'+licenciando_id+'/'+documento_id;
+    data.action = baseUrl + '/documentos/emitir/'+licenciando_id+'/'+ setor_id + '/'+ documento_id;
 
     data = document.getElementById('nomeDocumento');
     data.innerText  = json.nome;

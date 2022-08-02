@@ -3,7 +3,7 @@
 <br>
 <div class="col-md-10">
     <div class="credits ml-auto" role="toolbar" aria-label="Toolbar with button groups">
-        <a class="btn btn-primary" href="<?= base_url('/setores/adicionar') ?>" role="button">Adicionar</a>
+        <a class="btn btn-primary" href="<?= base_url('/universidades/adicionar') ?>" role="button">Adicionar</a>
     </div>
     <div class="card">
         <!-- <div class="card-header">

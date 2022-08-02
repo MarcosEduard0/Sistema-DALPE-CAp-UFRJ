@@ -31,7 +31,7 @@
             ["Element", "Density", {
                 role: "style"
             }],
-            <?php foreach ($quantUniversidades as $universidades) : ?>['<?= $universidades['sigla'] ?>', <?= $universidades['quantidade'] ?>, gerar_cor()],
+            <?php foreach ($universidadeLicenciando as $universidades) : ?>['<?= $universidades['sigla'] ?>', <?= $universidades['quantidade'] ?>, gerar_cor()],
             <?php endforeach ?>
         ]);
 
@@ -83,13 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer ">
-                    <hr>
-                    <div class="stats">
-                        <i class="fa fa-refresh"></i>
-                        Atualizado agora
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -110,13 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer ">
-                    <hr>
-                    <div class="stats">
-                        <i class="fa fa-calendar-o"></i>
-                        Um dia atrás
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -131,19 +119,13 @@
                         <div class="col-7 col-md-8">
                             <div class="numbers">
                                 <p class="card-category">Universidades</p>
-                                <p class="card-title">23
+                                <p class="card-title"><?= $quantUniversidades ?>
                                 <p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer ">
-                    <hr>
-                    <div class="stats">
-                        <i class="fa fa-clock-o"></i>
-                        Na última hora
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -158,19 +140,13 @@
                         <div class="col-7 col-md-8">
                             <div class="numbers">
                                 <p class="card-category">Documentos</p>
-                                <p class="card-title">1
+                                <p class="card-title"><?= $quantDocumentos ?>
                                 <p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer ">
-                    <hr>
-                    <div class="stats">
-                        <i class="fa fa-refresh"></i>
-                        Atualizado agora
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

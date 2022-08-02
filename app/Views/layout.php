@@ -20,8 +20,6 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/css/fontawesome-5.15.css") ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url("public/assets/css/choices.min.css") ?>">
 
-</head>
-
 <body class="">
     <?php if (session()->get('logged_in')) : ?>
         <div class="wrapper ">
@@ -175,5 +173,7 @@
 <script type='text/javascript' src="<?= base_url("public/assets/js/functions.js") ?>"></script>
 <script type='text/javascript' src="<?= base_url("public/assets/js/popper.min.js") ?>"></script>
 <script type='text/javascript' src="<?= base_url("public/assets/js/bootstrap.js") ?>"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
 
 </html>

@@ -1,17 +1,18 @@
-// //funcção para tornar imagem um ipunt
-// $('#imgLicen').bind("click" , function () {
-//         $('#filImage').click();
-//  });
+$('#numeros').on('change', function () {
+    var nr = parseInt(this.value, 10);
+    var inputs = $('[name="professor[]"]');
+    var teste = $('[name="teste"]');
+    var dif = inputs.length - nr;
 
-// $(function(){
-//     $('form').submit(function(){
-//          var options = $('#choices-multiple-remove-button > option:selected');
-//          if(options.length == 0){
-//              alert('Selecione um setor');
-//              return false;
-//          }
-//     });
-// });
+    if (dif < 0) {
+        var input = teste.eq(0).clone().attr('id', '');
+        while (dif++ < 0) $(document.getElementById("testando")).append(input)
+    } else if (dif > 0) {
+        teste.each(function (i) {
+            if (i >= nr) this.remove();
+        });
+    }
+});
 
 //remover multi-select
 $(document).ready(function(){

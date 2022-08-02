@@ -80,9 +80,9 @@
     </style>
 
     <div class="imagem">
-        <img style=" width: auto;height: 80px; padding:20px" src='public/assets/img/documentos/UFRJ.jpg'>
-        <img style=" width: auto;height: 70px;padding:20px" src='public/assets/img/documentos/CFCH.jpg'>
-        <img style=" width: auto; height: 78px;padding:20px" src="public/assets/img/documentos/CAP.jpg">
+        <img style=" width: auto;height: 100px; padding:20px" src='public/assets/img/documentos/UFRJ.jpg'>
+        <img style=" width: auto; height: 98px;padding:20px" src="public/assets/img/documentos/CAP.jpg">
+        <img style=" width: auto;height: 98px;padding:20px" src='public/assets/img/documentos/SOL.jpg'>
     </div>
 </head>
 
