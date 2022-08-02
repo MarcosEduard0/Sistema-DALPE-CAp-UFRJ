@@ -61,7 +61,7 @@ class Universidades extends BaseController
         ];
 
         if (empty($this->data['universidade'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar a universidade com id: " . $id);
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
 
         if ($this->request->getMethod() == 'post') {

@@ -20,9 +20,7 @@ else $baseUrl = 'adicionar'; ?>
                             <strong><?= isset($licenciando['dre']) ? $licenciando['dre'] : set_value('dre') ?></strong>
                         </p>
                     </div>
-                    <p class="description text-center">
-                        <?= isset($licenciando['observacao']) ? $licenciando['observacao'] : '' ?>
-                    </p>
+
                     <div class="row" style="justify-content: center; text-align-last: center;">
                         <div class="col-md-6 px-1">
                             <?php if (isset($licenciando)) : ?>
@@ -46,9 +44,10 @@ else $baseUrl = 'adicionar'; ?>
                                 </form>
                             <?php endif ?>
                         </div>
-
-
                     </div>
+                    <p class="description text-center"><br>
+                        <?= isset($licenciando['observacao']) ? $licenciando['observacao'] : '' ?>
+                    </p>
                 </div>
                 <?php if (isset($licenciando)) : ?>
                     <div class="card-footer">

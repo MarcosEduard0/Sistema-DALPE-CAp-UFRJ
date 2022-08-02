@@ -72,7 +72,7 @@ class Documentos extends BaseController
         ];
 
         if (empty($this->data['documento'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar o documento com id: " . $id);
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
         if ($this->request->getMethod() == 'post') {
             $this->salvar();

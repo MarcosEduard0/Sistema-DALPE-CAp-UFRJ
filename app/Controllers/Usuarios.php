@@ -42,7 +42,7 @@ class Usuarios extends BaseController
         ];
 
         if (empty($this->data['usuario'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar o usuario com id: " . $id);
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
 
         if ($this->request->getMethod() == 'post') {

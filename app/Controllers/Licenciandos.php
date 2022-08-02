@@ -94,25 +94,23 @@ class Licenciandos extends BaseController
 
         $this->data['titulo'] = 'Editar Licenciando';
         $this->data['licenciando'] = $this->licenciandosModel->joinLicenciandoEndereco($id);
-        $this->data['licenciando']['universidade_sigla'] = $this->universidadesModel->getUniversidades($this->data['licenciando']['universidade_id'])['sigla'];
-        $this->data['universidades'] = $this->universidadesModel->getUniversidades();
-        $this->data['documentos'] = $this->documentosModel->getDocumentos();
-        $this->data['licenciandoSetor_id'] = $licenciandoSetor_id;
 
-
-
-        $setores = $this->setoresModal->getSetores();
-        $this->data['setores'] = $this->setoresModal->getSetores();
-        $this->data['licenciando']['licenciando_setor'] = array();
-
-        if (!is_null($id)) {
+        if (!is_null($licenciandoSetor_id) && !is_null($id)) {
+            $resultLicenSetor = $this->licenciandoSetorModel->find($licenciandoSetor_id);
             $this->data['licenciandoSetores'] = $this->licenciandoSetorModel->getLicenciandosSetores($id);
             $this->data['setor_data'] = $this->licenciandoSetorModel->find($licenciandoSetor_id);
         }
 
-        if (empty($this->data['licenciando'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar o licenciando com id: " . $id);
+        if (empty($this->data['licenciando']) || empty($resultLicenSetor)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
+
+        $this->data['licenciandoSetor_id'] = $licenciandoSetor_id;
+        $this->data['licenciando']['universidade_sigla'] = $this->universidadesModel->getUniversidades($this->data['licenciando']['universidade_id'])['sigla'];
+        $this->data['universidades'] = $this->universidadesModel->getUniversidades();
+        $this->data['documentos'] = $this->documentosModel->getDocumentos();
+        $this->data['setores'] = $this->setoresModal->getSetores();
+        $this->data['licenciando']['licenciando_setor'] = array();
 
         if ($this->request->getMethod() == 'post') {
             $this->salvar($licenciandoSetor_id);

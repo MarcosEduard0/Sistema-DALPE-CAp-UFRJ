@@ -62,7 +62,7 @@ class Setores extends BaseController
         ];
 
         if (empty($this->data['setor'])) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Não foi possível localizar o setor com id: " . $id);
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
 
         if ($this->request->getMethod() == 'post') {
