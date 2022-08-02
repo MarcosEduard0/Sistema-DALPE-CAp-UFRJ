@@ -1,6 +1,5 @@
 <?php if (isset($licenciando)) $baseUrl = 'editar/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id;
 else $baseUrl = 'adicionar'; ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <div class="content">
     <div class="row">
@@ -41,7 +40,6 @@ else $baseUrl = 'adicionar'; ?>
                                         $field,
                                         $setores_options,
                                         $licenciandoSetor_id,
-                                        // 'class="custom-select mr-sm-2" required',
                                         'onchange="this.form.submit()" onmouseup="this.form.submit" class="form-control"',
                                     );
                                     ?>
@@ -65,7 +63,7 @@ else $baseUrl = 'adicionar'; ?>
                                     <h5><?= $licenciando['universidade_sigla'] ?><br><small>Instituição</small></h5>
                                 </div>
                                 <div class="col-lg-3 mr-auto">
-                                    <h5><?= (strtotime($setor_data['data_termino']) <= strtotime(date('Y-m-j'))) ? "NÃO" :  "SIM" ?><br><small>Concluinte</small></h5>
+                                    <h5><?= (strtotime($setor_data['data_termino']) <= strtotime(date('Y-m-j')) && $setor_data['data_termino'] != '0000-00-00') ? "SIM" :  "NÃO" ?><br><small>Concluinte</small></h5>
                                 </div>
                             </div>
                         </div>
