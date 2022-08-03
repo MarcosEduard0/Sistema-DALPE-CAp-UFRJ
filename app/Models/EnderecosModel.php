@@ -10,7 +10,7 @@ class EnderecosModel extends Model
     //Atributos de config
     protected $table = 'enderecos';
     protected $primaryKey = 'endereco_id';
-    protected $allowedFields = ['endereco', 'numero', 'complemento', 'bairro', 'cidade', 'cep'];
+    protected $allowedFields = ['endereco', 'bairro', 'cidade', 'cep'];
 
     //metodo GET
     public function getEnderecos($id = false)

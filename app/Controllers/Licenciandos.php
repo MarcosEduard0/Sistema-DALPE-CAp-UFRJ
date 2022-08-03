@@ -177,8 +177,6 @@ class Licenciandos extends BaseController
         $dataAdress = [
             'endereco_id' => $enderecoId,
             'endereco' => $this->request->getVar('endereco'),
-            'numero' => $this->request->getVar('numero'),
-            'complemento' => $this->request->getVar('complemento'),
             'bairro' => $this->request->getVar('bairro'),
             'cep' => $this->request->getVar('cep'),
             'cidade' => $this->request->getVar('cidade'),
@@ -208,20 +206,17 @@ class Licenciandos extends BaseController
 
             // Adicionando as informaçãoes dos setores do licenciando
             if (empty($licenciandoId)) {
-                $i = 0;
                 $save = $dataSetor;
                 $save['licenciando_id'] =  $this->licenciandosModel->getLastLicenciandoSave();
-                while ($i < count($dataSetor['setor_id'])) {
+
+                for ($i = 0; $i < count($dataSetor['setor_id']); $i++) {
                     $save['setor_id'] = $dataSetor['setor_id'][$i];
                     $save['data_cadastro'] = $dataSetor['data_cadastro'][$i];
                     $save['horas_estagio'] = $dataSetor['horas_estagio'][$i];
-
                     $save['data_termino'] = $dataSetor['data_termino'][$i];
                     $save['professor'] = $dataSetor['professor'][$i];
 
-
                     $this->licenciandoSetorModel->save($save);
-                    $i++;
                 }
             }
 
