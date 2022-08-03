@@ -265,6 +265,9 @@ class Licenciandos extends BaseController
     {
         $this->data['titulo'] = 'Importar licenciandos';
 
+
+
+
         if ($this->request->getMethod() == 'post') {
             $this->process_import();
             if (!isset($this->data['validation'])) {
@@ -298,7 +301,7 @@ class Licenciandos extends BaseController
                     $file->move('public/assets/csvfile/', $newName);
                     $file = fopen("public/assets/csvfile/" . $newName, "r");
                     $i = 0;
-                    $numberOfFields = 14;
+                    $numberOfFields = 13;
                     $csvArr = array();
 
                     while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
@@ -307,18 +310,17 @@ class Licenciandos extends BaseController
                         if ($i > 0 && $num == $numberOfFields) {
                             $csvArr[$i]['email'] = $filedata[0];
                             $csvArr[$i]['nome_completo'] = $filedata[1];
-                            $csvArr[$i]['dre'] = $filedata[2];
-                            $csvArr[$i]['universidade_id'] = $filedata[3];
-                            $csvArr[$i]['professor'] = $filedata[4];
-                            $csvArr[$i]['setor_id'] = $filedata[5];
-                            $csvArr[$i]['endereco'] = $filedata[6];
-                            $csvArr[$i]['numero'] = $filedata[7];
-                            $csvArr[$i]['complemento'] = $filedata[8];
-                            $csvArr[$i]['bairro'] = $filedata[9];
-                            $csvArr[$i]['cep'] = $filedata[10];
-                            $csvArr[$i]['cidade'] = $filedata[11];
-                            $csvArr[$i]['telefone1'] = $filedata[12];
-                            $csvArr[$i]['telefone2'] = $filedata[13];
+                            $csvArr[$i]['nome_social'] = $filedata[2];
+                            $csvArr[$i]['dre'] = $filedata[3];
+                            $csvArr[$i]['universidade_id'] = $filedata[4];
+                            $csvArr[$i]['professor'] = $filedata[5];
+                            $csvArr[$i]['setor_id'] = $filedata[6];
+                            $csvArr[$i]['endereco'] = $filedata[7];
+                            $csvArr[$i]['bairro'] = $filedata[8];
+                            $csvArr[$i]['cep'] = $filedata[9];
+                            $csvArr[$i]['cidade'] = $filedata[10];
+                            $csvArr[$i]['telefone1'] = $filedata[11];
+                            $csvArr[$i]['telefone2'] = $filedata[12];
                             $csvArr[$i]['horas_estagio'] = 0;
                             $csvArr[$i]['data_cadastro'] = date('Y-m-d');
                         }
@@ -326,9 +328,7 @@ class Licenciandos extends BaseController
                     }
                     fclose($file);
                     unlink("public/assets/csvfile/" . $newName);
-
                     $line = 0;
-                    $this->universidadesModel;
 
                     foreach ($csvArr as $userdata) {
                         $line++;
@@ -354,10 +354,10 @@ class Licenciandos extends BaseController
                     write_file("public/assets/local/{$res_filename}", $data); //PROBLEMA NA HORA DE ESCREVER O ARQUIVO TIME OUT
                     session()->setFlashdata('import_results', $res_filename);
                 } else {
-                    session()->setFlashdata('msg', msgbox('error', 'O arquivo CSV não pode ser importado.'));
+                    session()->setFlashdata('msg', msgbox('danger', 'O arquivo CSV não pode ser importado.'));
                 }
             } else {
-                session()->setFlashdata('msg', msgbox('error', 'O arquivo CSV não pdoe ser importado.'));
+                session()->setFlashdata('msg', msgbox('danger', 'O arquivo CSV não pdoe ser importado.'));
             }
         }
     }
@@ -371,53 +371,150 @@ class Licenciandos extends BaseController
     private function add_licenciando($data = array())
     {
 
-        $setores = explode(', ', $data['setor_id']);
-        $i = 0;
-        $data['setor_id'] = array();
-        foreach ($setores as $setor) {
-            $setorResult = $this->setoresModal->getIdByName($setor);
-            if (is_null($setorResult))
-                return 'setor_invalido';
-            else
-                $data['setor_id'][$i] = $setorResult['setor_id'];
-            $i++;
-        }
+        if (!$this->validateEmail($data['email']))
+            return 'invalid';
 
-        $data['universidade_id'] = $this->universidadesModel->getIdBySigla($data['universidade_id']);
-        if (is_null($data['universidade_id']))
-            return 'universidade_invalida';
-        else
-            $data['universidade_id'] = $data['universidade_id']['universidade_id'];
+        $setores = explode(',', $data['setor_id']);
+        $professores = explode(',', $data['professor']);
 
-        $findRecord = $this->licenciandosModel->where([
-            'dre' => $data['dre']
-        ])->countAllResults();
-        if ($findRecord > 0)
-            return 'licenciando_existente';
-        else
-            $res = $this->licenciandosModel->insert($data);
+        // se o atributo for multivalorado
+        if (count($setores) > 1 || count($professores) > 1) {
 
-        if ($res) {
-            //Pega o id do ultimo licenciando salvo
-            $data['licenciando_id'] = $this->licenciandosModel->getLastLicenciandoSave();
-            $this->enderecoModel->save($data);
-
-            //salvando os setores
-            $setoresId = $data['setor_id'];
-            foreach ($setoresId as $id) {
-                $setor = [
-                    'licenciando_id' => $data['licenciando_id'],
-                    'setor_id' => $id,
-                ];
-                $this->licenciandoSetorModel->insert($setor);
+            for ($i = 0; $i < count($setores); $i++) {
+                if ($setores[$i][0] == ' ') {
+                    $setores[$i] = substr($setores[$i], 1);
+                }
+                if ($professores[$i][0] == ' ') {
+                    $professores[$i] = substr($professores[$i], 1);
+                }
             }
 
-            //Pega o ultimo endereço salvo e atualiza o licenciando com o id do endereço
-            $data['endereco_id'] = $this->enderecoModel->getLastEnderecoSalvo();
-            $this->licenciandosModel->save($data);
-            return 'sucesso';
-        } else
+            // Verificando os setores e professores
+            $i = 0;
+            $data['setor_id'] = array();
+            $data['professor'] = array();
+            foreach ($setores as $setor) {
+                $setorResult = $this->setoresModal->getIdByName($setor);
+                if (is_null($setorResult))
+                    return 'setor_invalido';
+
+                $data['setor_id'][$i] = $setorResult['setor_id'];
+                $data['professor'][$i] = $professores[$i];
+                $i++;
+            }
+            // Verificando as universidades
+            $data['universidade_id'] = $this->universidadesModel->getIdBySigla($data['universidade_id']);
+            if (is_null($data['universidade_id']))
+                return 'universidade_invalida';
+            else
+                $data['universidade_id'] = $data['universidade_id']['universidade_id'];
+
+            // Verificando se o licenciando ja existe
+            $findRecord = $this->licenciandosModel->where([
+                'dre' => $data['dre']
+            ])->countAllResults();
+
+            if ($findRecord > 0)
+                return 'licenciando_existente';
+            else
+                $res = $this->licenciandosModel->insert($data);
+
+            if ($res) {
+                $data['licenciando_id'] = $this->licenciandosModel->getLastLicenciandoSave();
+                //salvando os setores
+                $setoresId = $data['setor_id'];
+                $professores = $data['professor'];
+                $i = 0;
+                foreach ($setoresId as $id) {
+                    $data['setor_id'] = $id;
+                    $data['professor'] = $professores[$i];
+                    $res = $this->licenciandoSetorModel->insert($data);
+                    if (!$res)
+                        return 'bd_erro';
+                    $i++;
+                }
+
+                $res = $this->enderecoModel->insert($data);
+                if ($res) {
+                    //Pega o ultimo endereço salvo e atualiza o licenciando com o id do endereço
+                    $data['endereco_id'] = $this->enderecoModel->getLastEnderecoSalvo();
+                    $this->licenciandosModel->save($data);
+                    return 'sucesso';
+                }
+            }
             return 'bd_erro';
+
+            //Caso seja cadastros separados
+        } else {
+
+            $data['universidade_id'] = $this->universidadesModel->getIdBySigla($data['universidade_id']);
+            if (is_null($data['universidade_id']))
+                return 'universidade_invalida';
+
+            $res = $this->setoresModal->getIdByName($data['setor_id']);
+            if (!$res)
+                return 'setor_invalido';
+
+            $data['universidade_id'] = $data['universidade_id']['universidade_id'];
+
+            $findRecord = $this->licenciandosModel->where([
+                'dre' => $data['dre']
+            ])->first();
+            // Caso ja seja cadastrado
+            if ($findRecord) {
+                // Pegue o seu ID e verifique quais sao os setores desse licenciando
+                $data['licenciando_id'] = $findRecord['licenciando_id'];
+                $result = $this->licenciandoSetorModel->select('nome')->join('setores', 'setores.setor_id = licenciandosetor.setor_id')->where(['licenciando_id' => $findRecord['licenciando_id']])->findAll();
+
+                $setores = array();
+                foreach ($result as $setor)
+                    array_push($setores, strtoupper($setor['nome']));
+
+                // Procura no array de setores se o setor que deseja se cadastrar ja é cadastrado
+                if (in_array(strtoupper($data['setor_id']), $setores))
+                    return 'licenciando_existente';
+
+                // Pega o id do setor
+                $result = $this->setoresModal->getIdByName($data['setor_id']);
+                if (is_null($result))
+                    return 'bd_erro';
+
+                $data['setor_id'] = $result['setor_id'];
+
+                //Salva o novo setor no banco
+                $res = $this->licenciandoSetorModel->save($data);
+                if (!$res)
+                    return 'bd_erro';
+
+                return 'sucesso';
+            } else {
+                // Salva o licenciando
+                $res = $this->licenciandosModel->save($data);
+
+                if ($res) {
+                    //Verifica se o setor é valido
+                    $data['setor_id'] = $this->setoresModal->getIdByName($data['setor_id']);
+                    if (!$data['setor_id'])
+                        return 'setor_invalido';
+
+                    $data['setor_id'] = $data['setor_id']['setor_id'];
+                    $data['licenciando_id'] = $this->licenciandosModel->getLastLicenciandoSave();
+
+                    //salvando o setor
+                    $this->licenciandoSetorModel->insert($data);
+
+                    //Salva endereço
+                    $res = $this->enderecoModel->save($data);
+                    if ($res) {
+                        $data['endereco_id'] = $this->enderecoModel->getLastEnderecoSalvo();
+                        $res = $this->licenciandosModel->save($data);
+                        if ($res)
+                            return 'sucesso';
+                    }
+                }
+            }
+            return 'bd_erro';
+        }
     }
 
     /**
@@ -431,14 +528,14 @@ class Licenciandos extends BaseController
     {
 
         if (!array_key_exists('import_results', $_SESSION)) {
-            $flashmsg = msgbox('error', "Nenhum dado de importação encontrado. Verifique a quantidade de colunas.");
+            $flashmsg = msgbox('danger', "Nenhum dado de importação encontrado. Verifique a quantidade de colunas.");
             session()->setFlashdata('msg', $flashmsg);
             return redirect()->to('licenciandos/importar');
         }
 
         $filename = session()->getFlashdata('import_results');
         if (!is_file("public/assets/local/{$filename}")) {
-            $flashmsg = msgbox('error', "Arquivo de resultados de importação não encontrado.");
+            $flashmsg = msgbox('danger', "Arquivo de resultados de importação não encontrado.");
             session()->setFlashdata('msg', $flashmsg);
             return redirect()->to('licenciandos/importar');
         }
@@ -451,7 +548,6 @@ class Licenciandos extends BaseController
 
         $this->data['titulo'] = 'Importar Licenciandos';
         @unlink("public/assets/local/{$filename}"); //Apaga o arquivo dataFile.
-        // return redirect()->to('licenciandos/importar');
 
         $this->data['body'] = view('licenciandos/import/results', $this->data);
         return $this->render();
@@ -467,6 +563,18 @@ class Licenciandos extends BaseController
             $file = $_SESSION['import_results'];
             @unlink("public/assets/local/{$file}");
             unset($_SESSION['import_results']);
+        }
+    }
+    /**
+     * Valida o endereço de email.
+     *
+     */
+    private function validateEmail($email)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return 1;
+        } else {
+            return 0;
         }
     }
 }

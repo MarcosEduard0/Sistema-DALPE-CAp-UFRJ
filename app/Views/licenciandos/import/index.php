@@ -7,7 +7,6 @@
                 </div>
                 <div class="card-body ">
                     <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-                    <?= session()->getFlashdata('msg') ?>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -15,11 +14,13 @@
                             <p>Seu arquivo CSV deve estar nesta ordem:</p>
                             <div class="card">
                                 <div style="background: #f4f4f4; text-align: center;" class="card-body">
-                                    <p class="card-text">Email | Nome | Dre | Instituição(sigla) | Prof.ª Prática | Setor Curricular | Endereço | Nº | Complemento | Bairro | Cep | Cidade | Telefone 1 | Telefone 2</p>
+                                    <p class="card-text">Email | Nome | Nome Social | Dre | Instituição(sigla) | Prof.ª Prática | Setor Curricular | Endereço | Bairro | Cep | Cidade | Telefone 1 | Telefone 2</p>
                                 </div>
                             </div>
-                            <p>Obs.: Em caso onde o campo <strong>Setor Curricular</strong> tenha mais de uma setor, esses sertores deverão estar separados por vírgula, com um espaço após a vírgula.</p>
-                            <p>Ex.: Física, História</p>
+                            <p>Obs.: Em caso onde os campos <strong>Setor Curricular</strong> e <strong>Prof.ª Prática</strong>
+                                possuam mais de valor, esses valores precisam ser separados por vírgula.
+                                <br>Caso esses valores sejam separdos por cadastros diferentes, a importação irá comparar o setor atual com o que pretende ser cadastro.
+                            </p>
                         </div>
                     </div>
                     <form class="needs-validation" novalidate action="<?= base_url('/licenciandos/importar') ?>" method="post" enctype="multipart/form-data">
