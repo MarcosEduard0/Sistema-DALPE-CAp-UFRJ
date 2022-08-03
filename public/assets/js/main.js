@@ -1,12 +1,12 @@
 $('#numeros').on('change', function () {
     var nr = parseInt(this.value, 10);
     var inputs = $('[name="professor[]"]');
-    var teste = $('[name="teste"]');
+    var teste = $('[name="novoSetor"]');
     var dif = inputs.length - nr;
 
     if (dif < 0) {
         var input = teste.eq(0).clone().attr('id', '');
-        while (dif++ < 0) $(document.getElementById("testando")).append(input)
+        while (dif++ < 0) $(document.getElementById("divSetor")).append(input)
     } else if (dif > 0) {
         teste.each(function (i) {
             if (i >= nr) this.remove();
