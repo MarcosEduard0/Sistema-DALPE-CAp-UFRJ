@@ -134,7 +134,7 @@ class Documentos extends BaseController
             'documento' => $this->documentosModel->getDocumentos($doc),
         ];
 
-        if (empty($this->data['setor']) || empty($licenciando) || empty($doc)) {
+        if (empty($this->data['setor']) || empty($this->data['licenciando']) || empty($this->data['documento'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException();
         }
 
