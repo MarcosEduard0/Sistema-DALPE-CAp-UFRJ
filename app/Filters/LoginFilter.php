@@ -21,7 +21,7 @@ class LoginFilter implements FilterInterface
         helper('MY_html_helper');
 
         if (!session()->logged_in) {
-            session()->setFlashdata('msg', msgbox('error', 'Você precisa esta autenticado para acessar essa pagina.'));
+            session()->setFlashdata('msg', msgbox('danger', 'Você precisa esta autenticado para acessar essa pagina.'));
             return redirect('login');
         }
     }

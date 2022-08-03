@@ -231,7 +231,7 @@ class Usuarios extends BaseController
                 return redirect('home');
             }
         }
-        session()->setFlashdata('msg', msgbox('danger', 'login'));
+        session()->setFlashdata('msg', msgbox('danger', 'Usuário e/ou senha incorretos.'));
         return redirect()->to('login');
     }
 

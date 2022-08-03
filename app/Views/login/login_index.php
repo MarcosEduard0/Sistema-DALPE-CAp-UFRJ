@@ -8,7 +8,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <?= session()->getFlashdata('msg') ?>
                             <p class="login-card-description">Login</p>
                             <form action="usuarios/login" method="post" class="needs-validation" novalidate>
                                 <div class="form-group">
