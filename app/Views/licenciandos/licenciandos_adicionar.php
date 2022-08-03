@@ -182,31 +182,19 @@ else $baseUrl = 'adicionar'; ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-1 pr-1">
-                                <div class="form-group">
-                                    <label for="numero">Número</label>
-                                    <input type="text" class="form-control" value="<?= isset($licenciando['numero']) ? $licenciando['numero'] : set_value('numero') ?>" name="numero">
-                                </div>
-                            </div>
-                            <div class="col-md-2 px-1">
-                                <div class="form-group">
-                                    <label for="complemento">Complemento</label>
-                                    <input type="text" class="form-control" value="<?= isset($licenciando['complemento']) ? $licenciando['complemento'] : set_value('complemento') ?>" name="complemento">
-                                </div>
-                            </div>
-                            <div class="col-md-3 px-1">
+                            <div class="col-md-4 pr-1">
                                 <div class="form-group">
                                     <label for="bairro">Bairro</label>
                                     <input type="text" class="form-control" value="<?= isset($licenciando['bairro']) ? $licenciando['bairro'] : set_value('bairro') ?>" name="bairro">
                                 </div>
                             </div>
-                            <div class="col-md-2 px-1">
+                            <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label for="cep">CEP</label>
                                     <input type="text" class="form-control" value="<?= isset($licenciando['cep']) ? $licenciando['cep'] : set_value('cep') ?>" name="cep">
                                 </div>
                             </div>
-                            <div class="col-md-4 pl-1">
+                            <div class="col-md-5 pl-1">
                                 <div class="form-group">
                                     <label for="cidade">Cidade</label>
                                     <input type="text" class="form-control" value="<?= isset($licenciando['cidade']) ? $licenciando['cidade'] : set_value('cidade') ?>" name="cidade">
@@ -215,18 +203,18 @@ else $baseUrl = 'adicionar'; ?>
                         </div>
                         <?php if (!isset($licenciando)) : ?>
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="professor">Quant. Setores</label>
+                                        <label for="quantSetor">Quant. Setores</label>
                                         <input id="numeros" class="form-control" type="number" min="1" max="20" value="1" />
                                     </div>
                                 </div>
                             </div>
-                            <div id="testando">
-                                <div class="row" name="teste">
-                                    <div class="col-md-2 pr-1">
+                            <div id="divSetor">
+                                <div class="row" name="novoSetor">
+                                    <div class="col-md-4 pr-1">
                                         <div class="form-group">
-                                            <label for="professor">Setores</label>
+                                            <label for="setores">Setores</label>
                                             <?php
                                             $setores_options = array();
                                             foreach ($setores as $setor) {
@@ -243,25 +231,25 @@ else $baseUrl = 'adicionar'; ?>
                                             ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 px-1">
+                                    <div class="col-md-4 px-1">
                                         <div class="form-group">
                                             <label for="horas_estagio">Horas de estagio:</label>
                                             <input type="text" class="form-control" name="horas_estagio[]">
                                         </div>
                                     </div>
-                                    <div class="col-md-2 px-1">
+                                    <div class="col-md-4 pl-1">
                                         <div class="form-group">
                                             <label for="data_cadastro">Data de cadastro:</label>
                                             <input type="date" class="form-control" value="<?= date('Y-m-d') ?>" name="data_cadastro[]">
                                         </div>
                                     </div>
-                                    <div class="col-md-2 px-1">
+                                    <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label for="data_termino">Data Conclusão:</label>
                                             <input type="date" class="form-control" name="data_termino[]">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 pl-1">
+                                    <div class="col-md-8 pl-1">
                                         <div class="form-group">
                                             <label for="professor">Professor(a) de Prática</label>
                                             <input type="text" class="form-control" id="professor" name="professor[]">
@@ -269,29 +257,30 @@ else $baseUrl = 'adicionar'; ?>
                                     </div>
 
                                 </div>
+
                             </div>
                         <?php endif;  ?>
                         <?php if (isset($licenciando)) : ?>
                             <div class="row">
-                                <div class="col-md-2 pr-1">
+                                <div class="col-md-4 pr-1">
                                     <div class="form-group">
                                         <label for="horas_estagio">Horas de estagio:</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
                                     </div>
                                 </div>
-                                <div class="col-md-3 px-1">
+                                <div class="col-md-4 px-1">
                                     <div class="form-group">
                                         <label for="data_cadastro">Data de cadastro:</label>
                                         <input type="date" class="form-control" value="<?= isset($setor_data['data_cadastro']) ? $setor_data['data_cadastro'] : date('Y-m-d') ?>" name="data_cadastro">
                                     </div>
                                 </div>
-                                <div class="col-md-3 px-1">
+                                <div class="col-md-4 pl-1">
                                     <div class="form-group">
                                         <label for="data_termino">Data Conclusão:</label>
                                         <input type="date" class="form-control" value="<?= isset($setor_data['data_termino']) ? $setor_data['data_termino'] : set_value('data_termino') ?>" name="data_termino">
                                     </div>
                                 </div>
-                                <div class="col-md-4 pl-1">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="professor">Professor(a) de Prática</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['professor']) ? $setor_data['professor'] : set_value('professor') ?>" name="professor">
