@@ -106,7 +106,8 @@ class LicenciandosModel extends Model
         FROM licenciandos as l
         RIGHT JOIN universidades as u
         on l.universidade_id = u.universidade_id
-        GROUP BY l.universidade_id";
+        GROUP BY l.universidade_id
+        HAVING quantidade > 0;";
 
         $query = $this->query($sql);
         return $query->getResultArray();

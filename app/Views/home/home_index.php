@@ -15,7 +15,7 @@
         var i;
         var data = google.visualization.arrayToDataTable([
             ['Licenciandos por setor', 'Percentage'],
-            <?php foreach ($quantSetores as $setores) : ?>['<?= $setores['nome'] ?>', <?= $setores['quantidade'] ?>],
+            <?php foreach ($quantSetoresLicendiando as $setores) : ?>['<?= $setores['nome'] ?>', <?= $setores['quantidade'] ?>],
             <?php endforeach ?>
         ]);
 
@@ -98,7 +98,7 @@
                         <div class="col-7 col-md-8">
                             <div class="numbers">
                                 <p class="card-category">Setores</p>
-                                <p class="card-title">11
+                                <p class="card-title"><?= $quantSetores ?>
                                 <p>
                             </div>
                         </div>
