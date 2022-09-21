@@ -168,8 +168,8 @@ class Licenciandos extends BaseController
 
         $dataSetor = [
             'setor_id' =>  $dataLicenciando['setores_id'],
-            'data_cadastro' => $this->request->getVar('data_cadastro'),
             'horas_estagio' => $this->request->getVar('horas_estagio'),
+            'data_inicio' => $this->request->getVar('data_inicio'),
             'data_termino' => $this->request->getVar('data_termino'),
             'professor' => $this->request->getVar('professor'),
         ];
@@ -211,7 +211,7 @@ class Licenciandos extends BaseController
 
                 for ($i = 0; $i < count($dataSetor['setor_id']); $i++) {
                     $save['setor_id'] = $dataSetor['setor_id'][$i];
-                    $save['data_cadastro'] = $dataSetor['data_cadastro'][$i];
+                    $save['data_cadastro'] = date('Y-m-d');
                     $save['horas_estagio'] = $dataSetor['horas_estagio'][$i];
                     $save['data_termino'] = $dataSetor['data_termino'][$i];
                     $save['professor'] = $dataSetor['professor'][$i];
@@ -235,6 +235,7 @@ class Licenciandos extends BaseController
 
 
                 $dataSetorSave['licenciando_id'] = $licenciandoId;
+                $dataSetorSave['data_cadastro'] = date('Y-m-d');
                 if (count($adicionar) > 0) {
                     foreach ($adicionar as $id) {
                         $dataSetorSave['setor_id'] = $id;

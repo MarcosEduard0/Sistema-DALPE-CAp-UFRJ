@@ -17,7 +17,7 @@ else $baseUrl = 'adicionar'; ?>
                                 <p>Escreva o texto do documento e coloque entre colchetes o dado que você precisar:</p>
                                 <div class="card">
                                     <div style="background: #f4f4f4" class="card-body">
-                                        <p class="card-text">[NOME], [ENDERECO], [NUMERO], [COMPLEMENTO], [BAIRRO], [CIDADE], [CEP], [SETOR], [UNIVERSIDADE], <br> [PROFESSOR], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
+                                        <p class="card-text">[NOME], [ENDERECO], [NUMERO], [COMPLEMENTO], [BAIRRO], [CIDADE], [CEP], [SETOR], [UNIVERSIDADE], <br> [PROFESSOR], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_INICIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
                                     </div>
                                 </div>
                             </div>

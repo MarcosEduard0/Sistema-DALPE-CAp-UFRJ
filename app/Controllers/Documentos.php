@@ -144,8 +144,12 @@ class Documentos extends BaseController
         $conteudo =  $this->data['documento']['conteudo'];
         $horas_estagios = $this->data['setor']['horas_estagio'] . ' (' . $this->valorPorExtenso($this->data['setor']['horas_estagio'], false, false) . ')';
         $dataCadastro = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_cadastro']));
+        $datainicio = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_inicio']));
         if (empty($dataCadastro)) {
             $dataCadastro = "XX/XX/XXXX";
+        }
+        if (empty($datainicio)) {
+            $datainicio = "XX/XX/XXXX";
         }
 
 
@@ -164,6 +168,7 @@ class Documentos extends BaseController
         $conteudo = str_replace('[UNIVERSIDADE]', mb_strtoupper($this->data['licenciando']['sigla_universidade']), $conteudo);
         $conteudo = str_replace('[PROFESSOR]', mb_strtoupper($this->data['setor']['professor']), $conteudo);
         $conteudo = str_replace('[DATA_CADASTRO]', $dataCadastro, $conteudo);
+        $conteudo = str_replace('[DATA_INICIO]', $datainicio, $conteudo);
         $conteudo = str_replace('[HORAS_ESTAGIO]', $horas_estagios, $conteudo);
         $conteudo = str_replace('[DATA_TERMINO]', $dataTermino, $conteudo);
         $conteudo = str_replace('[ANO_TERMINO]', $anoTermino, $conteudo);

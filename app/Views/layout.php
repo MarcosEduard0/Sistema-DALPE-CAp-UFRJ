@@ -65,8 +65,14 @@
                         </li>
                         <li class="<?= (session()->get('posicao') == 'Documentos') ? 'active' : '' ?>">
                             <a href="<?= base_url('/documentos') ?>">
-                                <i class="fa fa-file-alt fa-4x"></i>
+                                <i class="fa fa-file-pdf fa-4x"></i>
                                 <p>Documentos</p>
+                            </a>
+                        </li>
+                        <li class="<?= (session()->get('posicao') == 'relatorios') ? 'active' : '' ?>">
+                            <a href="<?= base_url('/relatorios') ?>">
+                                <i class="fa fa-file-alt fa-4x"></i>
+                                <p>Relatórios</p>
                             </a>
                         </li>
                         <li class="<?= (session()->get('posicao') == 'Usuarios') ? 'active' : '' ?>">
@@ -102,6 +108,7 @@
                                     <li><a href="<?= base_url('/setores') ?>"><i class="fa fa-pencil-ruler fa-1x"></i> Setores</a></li>
                                     <li><a href="<?= base_url('/universidades') ?>"><i class="fa fa-university fa-1x"></i> Universidade</a></li>
                                     <li><a href="<?= base_url('/documentos') ?>"><i class="fa fa-file-alt fa-1x"></i> Documentos</a></li>
+                                    <li><a href="<?= base_url('/documentos') ?>"><i class="fa fa-file-alt fa-1x"></i> Relatorios</a></li>
                                     <li><a href="<?= base_url('/usuarios') ?>"><i class="fa fa-users fa-1x"></i> Usuários</a></li>
 
                                 </ul>

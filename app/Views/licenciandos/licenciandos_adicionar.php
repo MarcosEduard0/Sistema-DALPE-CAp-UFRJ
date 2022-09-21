@@ -84,7 +84,7 @@ else $baseUrl = 'adicionar'; ?>
                                     <div class="row">
                                         <div class="col-md-2 pl-5">
                                             <div class="avatar-documento">
-                                                <i class="fa fa-file-alt fa-2x "></i>
+                                                <i class="fa fa-file-pdf fa-2x "></i>
                                             </div>
                                         </div>
                                         <div class="col-md-10">
@@ -203,7 +203,7 @@ else $baseUrl = 'adicionar'; ?>
                         </div>
                         <?php if (!isset($licenciando)) : ?>
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="quantSetor">Quant. Setores</label>
                                         <input id="numeros" class="form-control" type="number" min="1" max="20" value="1" />
@@ -239,8 +239,8 @@ else $baseUrl = 'adicionar'; ?>
                                     </div>
                                     <div class="col-md-4 pl-1">
                                         <div class="form-group">
-                                            <label for="data_cadastro">Data de cadastro:</label>
-                                            <input type="date" class="form-control" value="<?= date('Y-m-d') ?>" name="data_cadastro[]">
+                                            <label for="data_inicio">Data de início:</label>
+                                            <input type="date" class="form-control" name="data_inicio[]">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pr-1">
@@ -264,14 +264,14 @@ else $baseUrl = 'adicionar'; ?>
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label for="horas_estagio">Horas de estagio:</label>
-                                        <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
+                                        <label for="data_cadastro">Data de cadastro:</label>
+                                        <input type="date" class="form-control" value="<?= isset($setor_data['data_cadastro']) ? $setor_data['data_cadastro'] : set_value('data_cadastro') ?>" name="data_cadastro" disabled="">
                                     </div>
                                 </div>
-                                <div class="col-md-4 px-1">
+                                <div class=" col-md-4 px-1">
                                     <div class="form-group">
-                                        <label for="data_cadastro">Data de cadastro:</label>
-                                        <input type="date" class="form-control" value="<?= isset($setor_data['data_cadastro']) ? $setor_data['data_cadastro'] : date('Y-m-d') ?>" name="data_cadastro">
+                                        <label for="data_inicio">Data de início:</label>
+                                        <input type="date" class="form-control" value="<?= isset($setor_data['data_inicio']) ? $setor_data['data_inicio'] : set_value('data_inicio') ?>" name="data_inicio">
                                     </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
@@ -280,7 +280,13 @@ else $baseUrl = 'adicionar'; ?>
                                         <input type="date" class="form-control" value="<?= isset($setor_data['data_termino']) ? $setor_data['data_termino'] : set_value('data_termino') ?>" name="data_termino">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-4 pr-1">
+                                    <div class="form-group">
+                                        <label for="horas_estagio">Horas de estagio:</label>
+                                        <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 pl-1">
                                     <div class="form-group">
                                         <label for="professor">Professor(a) de Prática</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['professor']) ? $setor_data['professor'] : set_value('professor') ?>" name="professor">
