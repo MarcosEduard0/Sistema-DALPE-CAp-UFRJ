@@ -116,7 +116,37 @@ class Documentos extends BaseController
         session()->setFlashdata('msg', msgbox('success', 'O documento foi deletado.'));
         return redirect('documentos');
     }
+    public function cracha($licendiando_id, $setor_id)
+    {
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
+        $this->data = [
+            'titulo' => 'Crachá',
+            'licenciando' => $this->licenciandosModel->getLicenciandosCompleto($licendiando_id),
+            'setor' =>  $this->licenciandoSetorModel->find($setor_id),
+        ];
+        $this->data['setor'] = $this->setoresModal->find($this->data['setor']['setor_id'])['nome'];
+
+        if (empty($this->data['setor']) || empty($this->data['licenciando'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException();
+        }
+
+        $dompdf = new Dompdf();
+        $response = service('response');
+        $html = view('documentos/modelo_cracha', $this->data);
+
+        $dompdf->load_html($html);
+
+        // (Opcional) Configuração do papel e orientação
+        $dompdf->setPaper('A4', 'portrait');
+
+        $response->setHeader('Content-Type', 'application/pdf');
+
+        // Converte o HTML para PDF
+        $dompdf->render();
+
+        $dompdf->stream($this->data['licenciando']['nome_completo'], array('Attachment' => false));
+    }
 
     /**
      * Função do controlador para emissao de documentos
@@ -145,16 +175,21 @@ class Documentos extends BaseController
         $horas_estagios = $this->data['setor']['horas_estagio'] . ' (' . $this->valorPorExtenso($this->data['setor']['horas_estagio'], false, false) . ')';
         $dataCadastro = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_cadastro']));
         $datainicio = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_inicio']));
+        $dataTermino = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_termino']));
+        $anoTermino = strftime('%Y', strtotime($this->data['setor']['data_termino']));
+
         if (empty($dataCadastro)) {
             $dataCadastro = "XX/XX/XXXX";
         }
         if (empty($datainicio)) {
             $datainicio = "XX/XX/XXXX";
         }
+        if (empty($dataTermino)) {
+            $dataTermino = "XX/XX/XXXX";
+        }
 
 
-        $dataTermino = strftime('%d/%m/%Y', strtotime($this->data['setor']['data_termino']));
-        $anoTermino = strftime('%Y', strtotime($this->data['setor']['data_termino']));
+
 
         $conteudo = str_replace('[NOME]', mb_strtoupper($this->data['licenciando']['nome_completo']), $conteudo);
         $conteudo = str_replace('[DRE]', mb_strtoupper($this->data['licenciando']['dre']), $conteudo);

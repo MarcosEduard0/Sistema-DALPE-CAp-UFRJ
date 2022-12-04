@@ -79,6 +79,19 @@ else $baseUrl = 'adicionar'; ?>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled team-members">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-2 pl-5">
+                                        <div class="avatar-documento">
+                                            <i class="fa fa-file-pdf fa-2x "></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a target="_blank" href="<?= base_url('/documentos/cracha/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id) ?>">CRACHÁ</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <br>
                             <?php foreach ($documentos as $documento) : ?>
                                 <li>
                                     <div class="row">
@@ -346,43 +359,3 @@ else $baseUrl = 'adicionar'; ?>
         </div>
     </div>
 </div>
-<?php if (isset($licenciando)) : ?>
-    <div class="modal fade" id="documentoModal" tabindex="-1" role="dialog" aria-labelledby="documentoModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-size: medium;">
-                        <strong id="nomeDocumento">
-                            #
-                        </strong>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="document_action" class="needs-validation" novalidate action="#" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="">Selecione o setor</label>
-                            <?php
-                            $setores_options = array('' => 'Nenhum');
-                            foreach ($licenciandoSetores as $licenciandoSetor) {
-                                $setores_options[$licenciandoSetor['nome']] = $licenciandoSetor['nome'];
-                            }
-                            $field = 'documentoSetor';
-                            $value = set_value($field, null, FALSE);
-                            echo form_dropdown('documentoSetor', $setores_options, $value, 'tabindex="-1" class="custom-select mr-sm-2" required');
-                            ?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-info">Confirmar</button>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
-        </div>
-    </div>
-<?php endif ?>
