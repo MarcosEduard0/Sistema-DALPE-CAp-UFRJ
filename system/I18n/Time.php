@@ -76,7 +76,7 @@ class Time extends DateTime
     public function __construct(?string $time = null, $timezone = null, ?string $locale = null)
     {
         // If no locale was provided, grab it from Locale (set by IncomingRequest for web requests)
-        $this->locale = ! empty($locale) ? $locale : Locale::getDefault();
+        $this->locale = !empty($locale) ? $locale : Locale::getDefault();
 
         // If a test instance has been provided, use it instead.
         if ($time === null && static::$testNow instanceof self) {
@@ -87,13 +87,13 @@ class Time extends DateTime
             $time = static::$testNow->toDateTimeString();
         }
 
-        $timezone       = ! empty($timezone) ? $timezone : date_default_timezone_get();
+        $timezone       = !empty($timezone) ? $timezone : date_default_timezone_get();
         $this->timezone = $timezone instanceof DateTimeZone ? $timezone : new DateTimeZone($timezone);
 
         // If the time string was a relative string (i.e. 'next Tuesday')
         // then we need to adjust the time going in so that we have a current
         // timezone to work with.
-        if (! empty($time) && (is_string($time) && static::hasRelativeKeywords($time))) {
+        if (!empty($time) && (is_string($time) && static::hasRelativeKeywords($time))) {
             $instance = new DateTime('now', $this->timezone);
             $instance->modify($time);
             $time = $instance->format('Y-m-d H:i:s');
@@ -240,7 +240,7 @@ class Time extends DateTime
     #[ReturnTypeWillChange]
     public static function createFromFormat($format, $datetime, $timezone = null)
     {
-        if (! $date = parent::createFromFormat($format, $datetime)) {
+        if (!$date = parent::createFromFormat($format, $datetime)) {
             throw I18nException::forInvalidFormat($format);
         }
 
@@ -331,7 +331,7 @@ class Time extends DateTime
         // Convert to a Time instance
         if (is_string($datetime)) {
             $datetime = new self($datetime, $timezone, $locale);
-        } elseif ($datetime instanceof DateTimeInterface && ! $datetime instanceof self) {
+        } elseif ($datetime instanceof DateTimeInterface && !$datetime instanceof self) {
             $datetime = new self($datetime->format('Y-m-d H:i:s'), $timezone);
         }
 
@@ -558,7 +558,7 @@ class Time extends DateTime
             throw I18nException::forInvalidMonth($value);
         }
 
-        if (is_string($value) && ! is_numeric($value)) {
+        if (is_string($value) && !is_numeric($value)) {
             $value = date('m', strtotime("{$value} 1 2017"));
         }
 

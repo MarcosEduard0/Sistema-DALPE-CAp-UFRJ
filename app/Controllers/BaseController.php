@@ -30,6 +30,7 @@ class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $validation;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -47,6 +48,11 @@ class BaseController extends Controller
      */
     public $data = array();
 
+    /**
+     * Função para padronizar um layout para todas as páginas.
+     *
+     * @var string
+     */
     public function render($view_name = 'layout')
     {
         return view($view_name, $this->data);

@@ -2,24 +2,22 @@
 else $baseUrl = 'adicionar'; ?>
 <form class="needs-validation" novalidate action="<?= base_url('/documentos/' . $baseUrl) ?>" method="post">
     <div class="content">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row" style="place-content: center;">
+            <div class="col-md-9">
                 <div class="card ">
-                    <div class="card-header ">
-
-                    </div>
                     <div class="card-body ">
                         <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <strong><label for="nome">Opções</label></strong>
-                                <p>Escreva o texto do documento e coloque entre colchetes o dado que você precisar:</p>
+                                <p>Para a criação de um novo documento que necessite dos dados pessoais do licenciando, você pode utilizar as seguintes informações:</p>
                                 <div class="card">
                                     <div style="background: #f4f4f4" class="card-body">
-                                        <p class="card-text">[NOME], [ENDERECO], [NUMERO], [COMPLEMENTO], [BAIRRO], [CIDADE], [CEP], [SETOR], [UNIVERSIDADE], <br> [PROFESSOR], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_INICIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
+                                        <p class="card-text">[NOME], [ENDERECO], [NUMERO], [COMPLEMENTO], [BAIRRO], [CIDADE], [CEP], [SETOR], [UNIVERSIDADE],
+                                            [PROFESSOR], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_INICIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
                                     </div>
                                 </div>
+                                <p>Por exemplo, você pode redigir o seguinte texto: <b>"O aluno [NOME], matriculado na [UNIVERSIDADE], e residente na [ENDERECO]..."</b> </p>
                             </div>
                         </div>
                         <div class="form-row">

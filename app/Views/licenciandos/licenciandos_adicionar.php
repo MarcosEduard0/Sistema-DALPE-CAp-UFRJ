@@ -1,125 +1,18 @@
 <?php if (isset($licenciando)) $baseUrl = 'editar/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id;
 else $baseUrl = 'adicionar'; ?>
 
-
-
-
-<div class="content">
+<div class="col-md-12">
     <div class="row">
         <div class="col-md-4">
             <div class="card card-user">
-                <div class="image">
-                    <img src="<?= base_url("public/assets/img/header.jpg") ?>" alt="...">
-                </div>
-                <div class="card-body">
-                    <div class="author">
-                        <label class=newbtn>
-                            <img id="imgLicen" class="avatar border-gray" src="<?= base_url("public/assets/img/avatar.png") ?>" alt="...">
-                            <input type="file" id="filImage" name="filImage" accept="image/*">
-                        </label>
-
-                        <h5 class="title" style="color: #51cbce;"><?= isset($licenciando['nome_completo']) ? $licenciando['nome_completo'] : set_value('nome_completo') ?></h5>
-                        <p class="description">
-                            <strong><?= isset($licenciando['dre']) ? $licenciando['dre'] : set_value('dre') ?></strong>
-                        </p>
-                    </div>
-
-                    <div class="row" style="justify-content: center; text-align-last: center;">
-                        <div class="col-md-6 px-1">
-                            <?php if (isset($licenciando)) : ?>
-                                <form class="needs-validation" novalidate action="<?= base_url('/licenciandos/setor_select/' . $licenciando['licenciando_id']) ?>" method="post">
-                                    <?php
-                                    // $setores_options = array(0 => 'Nenhum');
-                                    $setores_options = array();
-                                    foreach ($licenciandoSetores as $licenciandoSetor) {
-                                        $setores_options[$licenciandoSetor['id']] = $licenciandoSetor['nome'];
-                                    }
-                                    $field = 'licenciando_setor';
-                                    $value = set_value($field, null, FALSE);
-
-                                    echo form_dropdown(
-                                        $field,
-                                        $setores_options,
-                                        $licenciandoSetor_id,
-                                        'onchange="this.form.submit()" onmouseup="this.form.submit" class="form-control"',
-                                    );
-                                    ?>
-                                </form>
-                            <?php endif ?>
-                        </div>
-                    </div>
-                    <p class="description text-center"><br>
-                        <?= isset($licenciando['observacao']) ? $licenciando['observacao'] : '' ?>
-                    </p>
-                </div>
-                <?php if (isset($licenciando)) : ?>
-                    <div class="card-footer">
-                        <hr>
-                        <div class="button-container">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-6 ml-auto">
-
-                                    <h5><?= $setor_data['horas_estagio'] ?><br><small>Horas</small></h5>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                                    <h5><?= $licenciando['universidade_sigla'] ?><br><small>Instituição</small></h5>
-                                </div>
-                                <div class="col-lg-3 mr-auto">
-                                    <h5><?= (strtotime($setor_data['data_termino']) <= strtotime(date('Y-m-j')) && $setor_data['data_termino'] != '0000-00-00') ? "SIM" :  "NÃO" ?><br><small>Concluinte</small></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif ?>
+                <?= $componente_card_usuario ?>
             </div>
-            <?php if (isset($licenciando)) : ?>
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title" style="padding-left: 30px;">Documentos</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled team-members">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 pl-5">
-                                        <div class="avatar-documento">
-                                            <i class="fa fa-file-pdf fa-2x "></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <a target="_blank" href="<?= base_url('/documentos/cracha/' . $licenciando['licenciando_id'] . '/' . $licenciandoSetor_id) ?>">CRACHÁ</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <br>
-                            <?php foreach ($documentos as $documento) : ?>
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-2 pl-5">
-                                            <div class="avatar-documento">
-                                                <i class="fa fa-file-pdf fa-2x "></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10">
-                                            <a target="_blank" href="<?= base_url('/documentos/emitir/' . $licenciando['licenciando_id']  . '/' . $licenciandoSetor_id . '/' . $documento['documento_id']) ?>">
-                                                <?= $documento['nome'] ?>
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-                            <?php endforeach ?>
-                        </ul>
-                    </div>
-                </div>
-            <?php endif ?>
+            <?php if (isset($licenciando)) echo $componente_documentos ?>
         </div>
         <div class="col-md-8">
             <div class="card card-user">
                 <div class="card-header">
                     <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-                    <!-- <h5 class="card-title"></h5> -->
                 </div>
                 <div class="card-body">
                     <form class="needs-validation" novalidate action="<?= base_url('/licenciandos/' . $baseUrl) ?>" method="post">
@@ -204,7 +97,7 @@ else $baseUrl = 'adicionar'; ?>
                             <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label for="cep">CEP</label>
-                                    <input type="text" class="form-control" value="<?= isset($licenciando['cep']) ? $licenciando['cep'] : set_value('cep') ?>" name="cep">
+                                    <input type="text" id="cep" class="form-control" value="<?= isset($licenciando['cep']) ? $licenciando['cep'] : set_value('cep') ?>" name="cep">
                                 </div>
                             </div>
                             <div class="col-md-5 pl-1">
@@ -227,7 +120,7 @@ else $baseUrl = 'adicionar'; ?>
                                 <div class="row" name="novoSetor">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
-                                            <label for="setores">Setores</label>
+                                            <label for="setores">Setor</label>
                                             <?php
                                             $setores_options = array();
                                             foreach ($setores as $setor) {
@@ -246,20 +139,26 @@ else $baseUrl = 'adicionar'; ?>
                                     </div>
                                     <div class="col-md-4 px-1">
                                         <div class="form-group">
-                                            <label for="horas_estagio">Horas de estagio:</label>
-                                            <input type="text" class="form-control" name="horas_estagio[]">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pl-1">
-                                        <div class="form-group">
                                             <label for="data_inicio">Data de início:</label>
                                             <input type="date" class="form-control" name="data_inicio[]">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 pr-1">
+                                    <div class="col-md-4 pl-1">
                                         <div class="form-group">
                                             <label for="data_termino">Data Conclusão:</label>
                                             <input type="date" class="form-control" name="data_termino[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label for="periodo">Período:</label>
+                                            <input type="text" id="periodo" class="form-control" name="periodo[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 px-1">
+                                        <div class="form-group">
+                                            <label for="horas_estagio">Horas de estagio:</label>
+                                            <input type="text" class="form-control" name="horas_estagio[]">
                                         </div>
                                     </div>
                                     <div class="col-md-8 pl-1">
@@ -268,12 +167,9 @@ else $baseUrl = 'adicionar'; ?>
                                             <input type="text" class="form-control" id="professor" name="professor[]">
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
-                        <?php endif;  ?>
-                        <?php if (isset($licenciando)) : ?>
+                        <?php else : ?>
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
@@ -293,7 +189,13 @@ else $baseUrl = 'adicionar'; ?>
                                         <input type="date" class="form-control" value="<?= isset($setor_data['data_termino']) ? $setor_data['data_termino'] : set_value('data_termino') ?>" name="data_termino">
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-2 pr-1">
+                                    <div class="form-group">
+                                        <label for="periodo">Período:</label>
+                                        <input type="text" id="periodo" class="form-control" name="periodo">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 px-1">
                                     <div class="form-group">
                                         <label for="horas_estagio">Horas de estagio:</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
@@ -341,7 +243,7 @@ else $baseUrl = 'adicionar'; ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Observação</label>
-                                    <textarea class="form-control textarea" style="height:150px;" name="observacao" placeholder="Escreva algo aqui..."><?= isset($licenciando['observacao']) ? $licenciando['observacao'] : set_value('observacao') ?></textarea>
+                                    <textarea class="form-control textarea" style="height:150px;" name="observacao"><?= isset($licenciando['observacao']) ? $licenciando['observacao'] : set_value('observacao') ?></textarea>
                                 </div>
                             </div>
                         </div>

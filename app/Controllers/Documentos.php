@@ -6,7 +6,9 @@ use App\Models\DocumentosModel;
 use App\Models\LicenciandosModel;
 use App\Models\SetoresModel;
 use App\Models\LicenciandoSetorModel;
-
+use DateTime;
+use DateTimeZone;
+use IntlDateFormatter;
 use Dompdf\Dompdf;
 
 
@@ -16,6 +18,7 @@ class Documentos extends BaseController
     protected $documentosModel;
     protected $licenciandosModel;
     protected $setoresModal;
+    protected $licenciandoSetorModel;
 
     public function __construct()
     {
@@ -67,7 +70,7 @@ class Documentos extends BaseController
     public function editar($id = null)
     {
         $this->data = [
-            'titulo' => 'Editar Declaração',
+            'titulo' => 'Editar',
             'documento' => $this->documentosModel->getDocumentos($id),
         ];
 
@@ -118,11 +121,9 @@ class Documentos extends BaseController
     }
     public function cracha($licendiando_id, $setor_id)
     {
-        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-
         $this->data = [
             'titulo' => 'Crachá',
-            'licenciando' => $this->licenciandosModel->getLicenciandosCompleto($licendiando_id),
+            'licenciando' => $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco($licendiando_id),
             'setor' =>  $this->licenciandoSetorModel->find($setor_id),
         ];
         $this->data['setor'] = $this->setoresModal->find($this->data['setor']['setor_id'])['nome'];
@@ -154,12 +155,9 @@ class Documentos extends BaseController
      */
     public function emitir($licendiando_id, $setor_id, $doc)
     {
-
-        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-
         $this->data = [
             'titulo' => 'Todos os licenciandos',
-            'licenciando' => $this->licenciandosModel->getLicenciandosCompleto($licendiando_id),
+            'licenciando' => $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco($licendiando_id),
             'setor' =>  $this->licenciandoSetorModel->find($setor_id),
             'documento' => $this->documentosModel->getDocumentos($doc),
         ];
@@ -180,16 +178,11 @@ class Documentos extends BaseController
 
         if (empty($dataCadastro)) {
             $dataCadastro = "XX/XX/XXXX";
-        }
-        if (empty($datainicio)) {
+        } elseif (empty($datainicio)) {
             $datainicio = "XX/XX/XXXX";
-        }
-        if (empty($dataTermino)) {
+        } elseif (empty($dataTermino)) {
             $dataTermino = "XX/XX/XXXX";
         }
-
-
-
 
         $conteudo = str_replace('[NOME]', mb_strtoupper($this->data['licenciando']['nome_completo']), $conteudo);
         $conteudo = str_replace('[DRE]', mb_strtoupper($this->data['licenciando']['dre']), $conteudo);
@@ -209,10 +202,9 @@ class Documentos extends BaseController
         $conteudo = str_replace('[ANO_TERMINO]', $anoTermino, $conteudo);
         $conteudo = str_replace('[PARAGRAFO]', '<p/><span class="space"/>', $conteudo);
 
-
         $this->data['documento']['conteudo'] = $conteudo;
-
-        $this->data['data'] =  'Rio de Janeiro, ' . strftime('%d de %B de %Y.', strtotime('today'));
+        $dateTimeObj = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+        $this->data['data'] = IntlDateFormatter::formatObject($dateTimeObj, "'Rio de Janeiro,' d 'de' MMMM 'de' y.", 'pt_BR');
 
         $dompdf = new Dompdf();
         $response = service('response');

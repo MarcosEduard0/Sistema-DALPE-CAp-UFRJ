@@ -1,24 +1,14 @@
 function deleteModal(id) {
 
-    // id = 'deleteDocumento' + id;
-    // console.log(id)
-
     var data = document.getElementById(id);
     var json = JSON.parse(data.getAttribute('data-detalhes'));
-    // console.log(window.location.href);
-    // $("#amendoin").textContent(json.documento_id);
+
     if(!json.nome){
     document.getElementById("nome").textContent = json.nome_completo;
     }else{
         document.getElementById("nome").textContent = json.nome;
     }
-
-    // document.getElementById("amendoin").innerHTML = json.documento_id;
-    // var link = document.getElementById("amendoin");
-    // link.setAttribute("href", "xyz.php");
     document.getElementById("confirmDelete").href = window.location.href + '/excluir/' + id;
-
-    // $("#amendoin").innerHTML(json.documento_id);
 
 }
 
@@ -31,8 +21,6 @@ function documentoModel(licenciando_id,documento_id, setor_id, baseUrl) {
 
     data = document.getElementById('nomeDocumento');
     data.innerText  = json.nome;
-
-    
 }
 
 demo = {
@@ -57,3 +45,43 @@ demo = {
     }
   
   };
+
+ /*===== NAVBAR =====*/
+  document.addEventListener("DOMContentLoaded", function(event) {
+   
+    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId),
+    bodypd = document.getElementById(bodyId),
+    headerpd = document.getElementById(headerId)
+    
+    // Validate that all variables exist
+    if(toggle && nav && bodypd && headerpd){
+    toggle.addEventListener('click', ()=>{
+    // show navbar
+    nav.classList.toggle('show-nav')
+    // change icon
+    toggle.classList.toggle('bx-x')
+    // add padding to body
+    bodypd.classList.toggle('body-pd')
+    // add padding to header
+    headerpd.classList.toggle('body-pd')
+    })
+    }
+    }
+    
+    showNavbar('header-toggle','nav-bar','body-pd','header')
+    
+    /*===== LINK ACTIVE =====*/
+    const linkColor = document.querySelectorAll('.nav_link')
+    
+    function colorLink(){
+    if(linkColor){
+    linkColor.forEach(l=> l.classList.remove('active'))
+    this.classList.add('active')
+    }
+    }
+    linkColor.forEach(l=> l.addEventListener('click', colorLink))
+    
+     // Your code to run since DOM is loaded and ready
+    });

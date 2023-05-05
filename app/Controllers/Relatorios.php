@@ -12,6 +12,10 @@ class Relatorios extends BaseController
 {
 
     protected $licenciandosModel;
+    protected $licenciandoSetorModel;
+    protected $documentosModel;
+    protected $universidadesModel;
+    protected $setoresModel;
 
     public function __construct()
     {

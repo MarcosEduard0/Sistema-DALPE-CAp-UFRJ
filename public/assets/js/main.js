@@ -14,6 +14,35 @@ $('#numeros').on('change', function () {
     }
 });
 
+// Mascara para o periodo letivo
+$(document).ready(function(){
+    $('#periodo').mask('0000/S', {
+      translation: {
+        'S': { pattern: /[1-2]/ }
+      }
+    });
+    
+    $('#periodo').blur(function(){
+      var periodo = $(this).val().replace(/[^0-9]/g,'');
+      if(periodo.length == 5){
+        var ano = parseInt(periodo.substr(0,4));
+        var semestre = parseInt(periodo.substr(4,5));
+        
+        // Verifica se o ano e semestre são válidos
+        console.log(periodo)
+        console.log(ano)
+        console.log(semestre)
+        if(ano >= 1900 && ano <= new Date().getFullYear() && (semestre === 1 || semestre === 2)){
+          $(this).removeClass('is-invalid').addClass('is-valid');
+        }else{
+          $(this).removeClass('is-valid').addClass('is-invalid');
+        }
+      }else{
+        $(this).removeClass('is-valid').addClass('is-invalid');
+      }
+    });
+  });
+
 //remover multi-select
 $(document).ready(function(){
 
@@ -24,6 +53,7 @@ $(document).ready(function(){
     renderChoiceLimit:10
     });
  });
+
 //Preview da imagem
 $(function(){
     $('#filImage').change(function(){
@@ -35,6 +65,7 @@ $(function(){
         fileReader.readAsDataURL(file)
     })
 })
+
 // funcao para o funcionamento das tables e traducao
 $(document).ready(function() {
     $('#tabela').DataTable({

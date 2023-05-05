@@ -1,7 +1,7 @@
 <?php
 defined('SYSTEMPATH') or exit('No direct script access allowed');
 
-function msgbox($tipo = 'error', $conteudo = '')
+function msgbox($tipo = 'danger', $conteudo = '')
 {
     // $html = "<div style='max-width: 250px 'class='alert alert-{$tipo}' role='alert'>{$conteudo}</div>";
     if ($conteudo == "login")

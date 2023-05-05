@@ -1,13 +1,9 @@
-<br>
-<div class="col-md-10">
+<div class="col-md-12">
     <div class="credits ml-auto" role="toolbar" aria-label="Toolbar with button groups">
         <a class="btn btn-primary" href="<?= base_url('/licenciandos/adicionar') ?>" role="button">Adicionar</a>
         <a class="btn btn-secondary" href="<?= base_url('/licenciandos/importar') ?>" role="button">Importar</a>
     </div>
     <div class="card">
-        <!-- <div class="card-header">
-            <h4 class="card-title"><?= $titulo ?></h4>
-        </div> -->
         <div class="card-body">
             <div class="">
                 <table id="tabela" class="table table-striped table-bordered" style="width:100%">
@@ -30,8 +26,8 @@
                                     <td><?= $licenciando['setores'] ?></td>
                                     <td class="text-center" style="color: white;">
                                         <div class="actions">
-                                            <a href="<?= base_url('/licenciandos/editar/' . $licenciando["licenciando_id"]) . '/' . $licenciando['setores_id'] ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a id="<?= $licenciando['licenciando_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($licenciando) ?>'><i class="fa fa-trash-alt" aria-hidden="true"></i></a>
+                                            <a href="<?= base_url('/licenciandos/editar/' . $licenciando["licenciando_id"]) . '/' . $licenciando['setores_id'] ?>"><i class='bx bxs-edit'></i></a>
+                                            <a id="<?= $licenciando['licenciando_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($licenciando) ?>'><i class='bx bxs-trash-alt'></i></a>
                                         </div>
                                     </td>
                                 </tr>

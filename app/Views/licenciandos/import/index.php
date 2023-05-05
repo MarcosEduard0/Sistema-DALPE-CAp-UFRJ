@@ -1,25 +1,56 @@
-<div class="content">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="card-header ">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['table']
+    });
+    google.charts.setOnLoadCallback(drawTable);
 
-                </div>
+    function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Email');
+        data.addColumn('string', 'Nome');
+        data.addColumn('string', 'Nome Social');
+        data.addColumn('string', 'Dre');
+        data.addColumn('string', 'Instituição(sigla)');
+        data.addColumn('string', 'Prof.ª Prática');
+        data.addColumn('string', 'Setor Curricular');
+        data.addColumn('string', 'Endereço');
+        data.addColumn('string', 'Bairro');
+        data.addColumn('string', 'Cep');
+        data.addColumn('string', 'Cidade');
+        data.addColumn('string', 'Telefone 1');
+        data.addColumn('string', 'Telefone 2');
+        data.addRows([
+            ['exemplo@gmail.com', 'Maria Clara', '', '1234567', 'UFRJ', 'Renata, Bruno Gomes', 'Matemática, Geografia', 'Rua clementina', 'Tijuca', '21022-404', 'Rio de Janeiro', '219940524', '']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {
+            showRowNumber: false,
+            width: '100%',
+            height: '100%'
+        });
+    }
+</script>
+<div class="content">
+    <div class="row" style="place-content: center;">
+        <div class="col-md-8">
+            <div class="card ">
                 <div class="card-body ">
                     <?= (isset($validation)) ? $validation->listErrors() : '' ?>
-
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <strong><label for="nome">Formato CSV</label></strong>
                             <p>Seu arquivo CSV deve estar nesta ordem:</p>
                             <div class="card">
-                                <div style="background: #f4f4f4; text-align: center;" class="card-body">
-                                    <p class="card-text">Email | Nome | Nome Social | Dre | Instituição(sigla) | Prof.ª Prática | Setor Curricular | Endereço | Bairro | Cep | Cidade | Telefone 1 | Telefone 2</p>
+                                <div id="table_div">
                                 </div>
                             </div>
-                            <p>Obs.: Em caso onde os campos <strong>Setor Curricular</strong> e <strong>Prof.ª Prática</strong>
-                                possuam mais de valor, esses valores precisam ser separados por vírgula.
-                                <br>Caso esses valores sejam separdos por cadastros diferentes, a importação irá comparar o setor atual com o que pretende ser cadastro.
+                            <p>Nota: Se os campos <strong>Setor Curricular</strong> e <strong>Prof.ª Prática</strong> tiverem mais de um valor,
+                                esses valores devem ser separados por vírgulas.
+                                <br>Se esses valores forem provenientes de cadastros diferentes, a importação irá comparar o setor atual
+                                com o setor que está sendo cadastrado.
                             </p>
                         </div>
                     </div>

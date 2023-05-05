@@ -2,10 +2,9 @@
 else $baseUrl = 'adicionar'; ?>
 
 <form class="needs-validation" novalidate action="<?= base_url('/usuarios/' . $baseUrl) ?>" method="post" enctype="multipart/form-data">
-
     <div class="content">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="card card-user">
                     <div class="card-header">
                         <?= (isset($validation)) ? $validation->listErrors() : '' ?>
@@ -92,8 +91,6 @@ else $baseUrl = 'adicionar'; ?>
                                 </div>
                             </div>
                         </div>
-
-
                         <input type="hidden" name="usuario_id" value="<?= isset($usuario['usuario_id']) ? $usuario['usuario_id'] : set_value('usuario_id') ?>">
                         <div class="row">
                             <div class="update ml-auto mr-auto">
@@ -104,15 +101,12 @@ else $baseUrl = 'adicionar'; ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="card card-user">
-                    <!-- <div class="image">
-                    <img src="<?= base_url("public/assets/img/header.jpg") ?>" alt="...">
-                    </div> -->
                     <div class="card-body">
                         <div class="text-center">
                             <label class=newbtn>
-                                <img id="imgLicen" src="<?= isset($usuario['assinatura']) ? base_url("public/assets/uploads/" . $usuario['assinatura']) : base_url("public/assets/img/no-img.jpg") ?>" style=" width: 350px; height: auto">
+                                <img id="imgLicen" class="assinatura img" src="<?= isset($usuario['assinatura']) ? base_url("public/assets/uploads/" . $usuario['assinatura']) : base_url("public/assets/img/no-img.jpg") ?>">
                                 <input type="file" id="filImage" name="assinatura" accept="image/*">
                             </label>
                         </div>

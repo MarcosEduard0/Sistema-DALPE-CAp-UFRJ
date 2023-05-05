@@ -57,7 +57,7 @@ class Setores extends BaseController
     public function editar($id = null)
     {
         $this->data = [
-            'titulo' => 'Detalhes',
+            'titulo' => 'Editar',
             'setor' => $this->setorModel->getSetores($id),
         ];
 

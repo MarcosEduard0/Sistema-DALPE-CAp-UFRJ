@@ -37,7 +37,7 @@ class Usuarios extends BaseController
     public function editar($id = null)
     {
         $this->data = [
-            'titulo' => 'Detalhes',
+            'titulo' => 'Editar',
             'usuario' => $this->usuariosModel->getUsuarios($id),
         ];
 

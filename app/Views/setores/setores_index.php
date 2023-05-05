@@ -1,11 +1,8 @@
-<div class="col-md-10">
+<div class="col-md-12">
     <div class="credits ml-auto" role="toolbar" aria-label="Toolbar with button groups">
         <a class="btn btn-primary" href="<?= base_url('/setores/adicionar') ?>" role="button">Adicionar</a>
     </div>
     <div class="card">
-        <!-- <div class="card-header">
-            <h4 class="card-title"><?= $titulo ?></h4>
-        </div> -->
         <div class="card-body">
             <div class="">
                 <table id="tabela" class="table table-striped table-bordered" style="width:100%">
@@ -25,8 +22,8 @@
                                     <td><?= $setor['descricao'] ?></td>
                                     <td class="text-center">
                                         <div class="actions">
-                                            <a href="<?= base_url('/setores/editar/' . $setor['setor_id']) ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a id="<?= $setor['setor_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($setor) ?>'><i class="fa fa-trash-alt" aria-hidden="true"></i></a>
+                                            <a href="<?= base_url('/setores/editar/' . $setor['setor_id']) ?>"><i class='bx bxs-edit'></i></a>
+                                            <a id="<?= $setor['setor_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($setor) ?>'><i class='bx bxs-trash-alt'></i></a>
                                         </div>
                                     </td>
                                 </tr>

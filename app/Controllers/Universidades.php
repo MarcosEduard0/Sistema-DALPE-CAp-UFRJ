@@ -56,7 +56,7 @@ class Universidades extends BaseController
     public function editar($id = null)
     {
         $this->data = [
-            'titulo' => 'Detalhes',
+            'titulo' => 'Editar',
             'universidade' => $this->universidadeModel->getUniversidades($id),
         ];
 

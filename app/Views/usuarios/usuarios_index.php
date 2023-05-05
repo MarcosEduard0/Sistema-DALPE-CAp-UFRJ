@@ -1,5 +1,5 @@
 <br>
-<div class="col-md-10">
+<div class="col-md-12">
     <div class="credits ml-auto" role="toolbar" aria-label="Toolbar with button groups">
         <a class="btn btn-primary" href="<?= base_url('/usuarios/adicionar') ?>" role="button">Adicionar</a>
     </div>
@@ -32,8 +32,8 @@
                                         ?></td>
                                     <td class="text-center">
                                         <div class="actions">
-                                            <a href="<?= base_url('/usuarios/editar/' . $usuario['usuario_id']) ?>"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a id="<?= $usuario['usuario_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($usuario) ?>'><i class="fa fa-trash-alt" aria-hidden="true"></i></a>
+                                            <a href="<?= base_url('/usuarios/editar/' . $usuario['usuario_id']) ?>"><i class='bx bxs-edit'></i></a>
+                                            <a id="<?= $usuario['usuario_id'] ?>" type="button" data-toggle="modal" data-target="#exampleModal" onclick="deleteModal(this.id)" data-detalhes='<?= json_encode($usuario) ?>'><i class='bx bxs-trash-alt'></i></a>
                                         </div>
                                     </td>
                                 </tr>

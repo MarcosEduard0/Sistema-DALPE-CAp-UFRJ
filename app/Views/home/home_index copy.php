@@ -1,74 +1,66 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    // Carrega a biblioteca do Google Charts
     google.charts.load('current', {
-        'packages': ['corechart', 'bar', 'line']
+        'packages': ['corechart']
     });
     google.charts.setOnLoadCallback(drawChart);
 
-    // Define a função para criar o gráfico
+    function gerar_cor() {
+        return '#' + parseInt((Math.random() * 0xFFFFFF))
+            .toString(16)
+            .padStart(6, '0');
+    }
+
     function drawChart() {
-
-        // Gráfico 1
-        // Gráfico Licendiando por Instituição
-        var data = google.visualization.arrayToDataTable(<?= $quantUniversidadeLicenciando ?>)
-
-        // Cria um objeto de opções do Google Charts
-        var options = {
-            legend: {
-                position: 'none'
-            },
-            bars: 'horizontal',
-        };
-
-        // Cria um objeto de gráfico do Google Charts
-        var chart = new google.charts.Bar(document.getElementById('barchart'));
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-
-        // Gráfico 2
-        // Gráfico Licendiando por Setores
-        data = new google.visualization.arrayToDataTable(<?= $quantSetoresLicendiando ?>);
-
-        // Cria um objeto para armazenar as cores utilizadas
-
-        var options = {
-            height: 'auto',
-            legend: {
-                position: 'none'
-            },
-            hAxis: {
-                title: '',
-            },
-            bar: {
-                groupWidth: "90%"
-            }
-        };
-        var chart = new google.charts.Bar(document.getElementById('columnchart_values'));
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-
-        // Gráfico 3
-        // Gráfico de Linha
-        data = new google.visualization.DataTable();
-        data.addColumn('string', 'Períodos');
-        data.addColumn('number', 'Quant.');
-
-        data.addRows([
-            ['2018.1', 10],
-            ['2018.2', 20],
-            ['2019.1', 15],
-            ['2019.2', 25],
-
-
+        var i;
+        var data = google.visualization.arrayToDataTable([
+            ['Licenciandos por setor', 'Percentage'],
+            <?php foreach ($quantSetoresLicendiando as $setores) : ?>['<?= $setores['nome'] ?>', <?= $setores['quantidade'] ?>],
+            <?php endforeach ?>
         ]);
 
         var options = {
-            legend: {
-                position: 'none'
-            },
+            // title: '',
+            // width: 600,
+            // height: 400,
         };
 
-        var chart = new google.charts.Line(document.getElementById('lineYears'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
         chart.draw(data, options);
+
+        data = google.visualization.arrayToDataTable([
+            ["Element", "Density", {
+                role: "style"
+            }],
+            <?php foreach ($universidadeLicenciando as $universidades) : ?>['<?= $universidades['sigla'] ?>', <?= $universidades['quantidade'] ?>, gerar_cor()],
+            <?php endforeach ?>
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            {
+                calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation"
+            },
+            2
+        ]);
+
+        options = {
+            // title: "Density of Precious Metals, in g/cm^3",
+            // width: 600,
+            // height: 400,
+            bar: {
+                groupWidth: "95%"
+            },
+            legend: {
+                position: "none"
+            },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
     }
 </script>
 
@@ -154,57 +146,59 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <!-- <div class="graficoHome"> -->
-            <div class="card ">
-                <div class="card-header ">
-                    <h5 class="card-title">Licenciandos por Instituição</h5>
-                </div>
-                <div class="card-body ">
-                    <!-- <div id="barchart" class="graficoSetor"></div> -->
-                    <div id="barchart"></div>
+            <div class="graficoHome">
+                <div class="card ">
+                    <div class="card-header ">
+                        <h5 class="card-title">Licenciandos por setores</h5>
+                    </div>
+                    <div class="card-body ">
+                        <div id="piechart" class="graficoSetor"></div>
+                    </div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
         <div class="col-md-6">
+            <div class="graficoHome">
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h5 class="card-title">Licenciando por instituição</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="columnchart_values" style=" height: auto;"></div>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12">
             <div class="card ">
                 <div class="card-header ">
-                    <h5 class="card-title">Licenciando por Período(Teste)</h5>
-                    <!-- <p class="card-category">24 Hours performance</p> -->
+                    <h5 class="card-title">Users Behavior</h5>
+                    <p class="card-category">24 Hours performance</p>
                 </div>
                 <div class="card-body ">
-                    <div id=lineYears></div>
+                    <canvas id=chartHours width="400" height="100"></canvas>
                 </div>
-                <!-- <div class="card-footer ">
+                <div class="card-footer ">
                     <hr>
                     <div class="stats">
                         <i class="fa fa-history"></i> Updated 3 minutes ago
                     </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <!-- <div class="graficoHome"> -->
-            <div class="card card-chart">
-                <div class="card-header">
-                    <h5 class="card-title">Licenciando por Setor</h5>
-                </div>
-                <div class="card-body">
-                    <div id="columnchart_values"></div>
-                </div>
-                <div class="card-footer">
                 </div>
             </div>
-            <!-- </div> -->
         </div>
-    </div>
+    </div> -->
+    <!-- <div id="piechart" style="width: 1500px; height: 450px;"></div> -->
+
     <!-- <div class="row">
         <div class="col-md-12">
 
@@ -214,7 +208,7 @@
                     <p class="card-category">Quantidade de licenciandos por sertor</p>
                 </div>
                 <div class="card-body ">
-                    <div id="barchart" style="width: 1500px; height: 450px;"></div>
+                    <div id="piechart" style="width: 1500px; height: 450px;"></div>
                 </div>
                 <div class="card-footer ">
                     <hr>

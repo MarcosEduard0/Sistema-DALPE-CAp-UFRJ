@@ -17,13 +17,15 @@ class Licenciandos extends BaseController
     protected $universidadesModel;
     protected $documentoModel;
     protected $enderecoModel;
+    protected $documentosModel;
+    protected $licenciandoSetorModel;
 
     public function __construct()
     {
         $this->licenciandosModel = new LicenciandosModel();
         $this->setoresModal = new SetoresModel();
-        $this->universidadesModel = new UniversidadesModel();
         $this->documentosModel = new DocumentosModel();
+        $this->universidadesModel = new UniversidadesModel();
         $this->enderecoModel = new EnderecosModel();
         $this->licenciandoSetorModel = new LicenciandoSetorModel();
     }
@@ -31,8 +33,9 @@ class Licenciandos extends BaseController
     public function index()
     {
         $this->data['titulo'] = 'Licenciandos';
-        $this->data['licenciandos'] = $this->licenciandosModel->getLicenciandosCompleto();
+        $this->data['licenciandos'] = $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco();
         $this->data['setores'] = array();
+        $this->data['periodos'] = array();
         $i = 0;
         foreach ($this->data['licenciandos'] as $licenciando) {
             $this->data['setores'][$i] = $this->licenciandoSetorModel->getLicenciandosSetores($licenciando['licenciando_id']);
@@ -46,14 +49,18 @@ class Licenciandos extends BaseController
                 $this->data['licenciandos'][$i]['setores_id'] = 0;
             } else {
                 $nomeSetor = array();
-                $j = 0;
+                $periodos = array();
+                $row = 0;
 
                 foreach ($this->data['setores'][$i] as $setor) {
-                    $nomeSetor[$j] = $setor['nome'];
-                    $j++;
+                    $nomeSetor[$row] = $setor['nome'];
+                    $periodos[$row] = $setor['periodo'];
+                    $row++;
                 }
                 $nomeSetor = implode(", ", $nomeSetor);
+                $periodos = implode(", ", $periodos);
 
+                $this->data['licenciandos'][$i]['periodos'] = $periodos;
                 $this->data['licenciandos'][$i]['setores'] =  $nomeSetor;
                 $this->data['licenciandos'][$i]['setores_id'] = $this->data['setores'][$i][0]['id'];
             }
@@ -74,7 +81,7 @@ class Licenciandos extends BaseController
     public function adicionar()
     {
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
-        $this->data['titulo'] = 'Adicionar Licenciando';
+        $this->data['titulo'] = 'Adicionar';
         $this->data['setores'] = $this->setoresModal->getSetores();
 
         if ($this->request->getMethod() == 'post') {
@@ -84,7 +91,7 @@ class Licenciandos extends BaseController
                 return redirect()->to('licenciandos');
             }
         }
-
+        $this->data['componente_card_usuario'] = view('licenciandos/componentes/card_usuario', $this->data);
         $this->data['body'] = view('licenciandos/licenciandos_adicionar', $this->data);
         return $this->render();
     }
@@ -92,7 +99,7 @@ class Licenciandos extends BaseController
     public function editar($id = null, $licenciandoSetor_id = null)
     {
 
-        $this->data['titulo'] = 'Editar Licenciando';
+        $this->data['titulo'] = 'Editar';
         $this->data['licenciando'] = $this->licenciandosModel->joinLicenciandoEndereco($id);
 
         if (!is_null($licenciandoSetor_id) && !is_null($id)) {
@@ -119,6 +126,9 @@ class Licenciandos extends BaseController
                 return redirect()->to('licenciandos/editar/' . $id . '/' . $licenciandoSetor_id);
             }
         }
+
+        $this->data['componente_card_usuario'] = view('licenciandos/componentes/card_usuario', $this->data);
+        $this->data['componente_documentos'] = view('licenciandos/componentes/documentos', $this->data);
         $this->data['body'] = view('licenciandos/licenciandos_adicionar',  $this->data);
         return $this->render();
     }
@@ -265,10 +275,7 @@ class Licenciandos extends BaseController
     public function importar()
     {
         $this->data['titulo'] = 'Importar licenciandos';
-
-
-
-
+        // $request = service('request');
         if ($this->request->getMethod() == 'post') {
             $this->process_import();
             if (!isset($this->data['validation'])) {
@@ -301,31 +308,31 @@ class Licenciandos extends BaseController
                     $newName = $file->getRandomName();
                     $file->move('public/assets/csvfile/', $newName);
                     $file = fopen("public/assets/csvfile/" . $newName, "r");
-                    $i = 0;
+                    $row = 0;
                     $numberOfFields = 13;
                     $csvArr = array();
 
                     while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
                         $num = count($filedata);
 
-                        if ($i > 0 && $num == $numberOfFields) {
-                            $csvArr[$i]['email'] = $filedata[0];
-                            $csvArr[$i]['nome_completo'] = $filedata[1];
-                            $csvArr[$i]['nome_social'] = $filedata[2];
-                            $csvArr[$i]['dre'] = $filedata[3];
-                            $csvArr[$i]['universidade_id'] = $filedata[4];
-                            $csvArr[$i]['professor'] = $filedata[5];
-                            $csvArr[$i]['setor_id'] = $filedata[6];
-                            $csvArr[$i]['endereco'] = $filedata[7];
-                            $csvArr[$i]['bairro'] = $filedata[8];
-                            $csvArr[$i]['cep'] = $filedata[9];
-                            $csvArr[$i]['cidade'] = $filedata[10];
-                            $csvArr[$i]['telefone1'] = $filedata[11];
-                            $csvArr[$i]['telefone2'] = $filedata[12];
-                            $csvArr[$i]['horas_estagio'] = 0;
-                            $csvArr[$i]['data_cadastro'] = date('Y-m-d');
+                        if ($row > 0 && $num == $numberOfFields) {
+                            $csvArr[$row]['email'] = $filedata[0];
+                            $csvArr[$row]['nome_completo'] = $filedata[1];
+                            $csvArr[$row]['nome_social'] = $filedata[2];
+                            $csvArr[$row]['dre'] = $filedata[3];
+                            $csvArr[$row]['universidade_id'] = $filedata[4];
+                            $csvArr[$row]['professor'] = $filedata[5];
+                            $csvArr[$row]['setor_id'] = $filedata[6];
+                            $csvArr[$row]['endereco'] = $filedata[7];
+                            $csvArr[$row]['bairro'] = $filedata[8];
+                            $csvArr[$row]['cep'] = $filedata[9];
+                            $csvArr[$row]['cidade'] = $filedata[10];
+                            $csvArr[$row]['telefone1'] = $filedata[11];
+                            $csvArr[$row]['telefone2'] = $filedata[12];
+                            $csvArr[$row]['horas_estagio'] = 0;
+                            $csvArr[$row]['data_cadastro'] = date('Y-m-d');
                         }
-                        $i++;
+                        $row++;
                     }
                     fclose($file);
                     unlink("public/assets/csvfile/" . $newName);

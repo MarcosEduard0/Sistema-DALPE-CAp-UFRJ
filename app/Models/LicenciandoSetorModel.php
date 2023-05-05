@@ -10,7 +10,10 @@ class LicenciandoSetorModel extends Model
     //Atributos de config
     protected $table = 'licenciandosetor';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['licenciando_id', 'setor_id', 'data_cadastro', 'horas_estagio', 'data_inicio', 'data_termino', 'professor'];
+    protected $allowedFields = [
+        'licenciando_id', 'setor_id', 'data_cadastro',
+        'horas_estagio', 'data_inicio', 'data_termino', 'professor', 'periodo'
+    ];
 
     //metodo GET
     public function getLicenciandosSetores($id = false)

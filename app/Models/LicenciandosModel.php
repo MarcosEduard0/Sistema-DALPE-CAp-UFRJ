@@ -50,7 +50,7 @@ class LicenciandosModel extends Model
         }
     }
 
-    public function getLicenciandosCompleto($id = false)
+    public function getLicenciandosAndUniversidadeAndEndereco($id = false)
     {
 
         if ($id === false) {
@@ -88,7 +88,7 @@ class LicenciandosModel extends Model
     public function getTotalSetoresPorLicenciando()
     {
 
-        $sql = "SELECT COUNT(l.licenciando_id) as quantidade, s.setor_id, s.nome
+        $sql = "SELECT COUNT(l.licenciando_id) as quantidade, s.nome
         FROM licenciandos as l
         INNER JOIN	licenciandosetor as ls
         on ls.licenciando_id = l.licenciando_id

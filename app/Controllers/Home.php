@@ -8,12 +8,15 @@ use App\Models\DocumentosModel;
 use App\Models\SetoresModel;
 use App\Models\UniversidadesModel;
 
-// require_once "dompdf/autoload.inc.php";
-
 class Home extends BaseController
 {
 
     protected $licenciandosModel;
+    protected $licenciandoSetorModel;
+    protected $licenciandodocumentosModelsModel;
+    protected $documentosModel;
+    protected $universidadesModel;
+    protected $setoresModel;
 
     public function __construct()
     {
@@ -30,13 +33,27 @@ class Home extends BaseController
      */
     public function index()
     {
+        $totalSetores = $this->licenciandosModel->getTotalSetoresPorLicenciando();
+        $licenciando_setor = [['Licenciandos por Setor', 'Quantidade']];
+        foreach ($totalSetores as $setor) {
+            array_push($licenciando_setor, [$setor['nome'], intval($setor['quantidade'])]);
+        }
+        $licenciando_setor = json_encode($licenciando_setor);
+
+        $totalUniversidades = $this->licenciandosModel->getTotalUniversidadePorLicenciando();
+        $licenciando_universidade = [['', 'Quantidade']];
+        foreach ($totalUniversidades as $universidade) {
+            array_push($licenciando_universidade, [$universidade['sigla'], intval($universidade['quantidade'])]);
+        }
+
+        $licenciando_universidade = json_encode($licenciando_universidade);
 
         $this->data = [
             'titulo' =>  'Inicio',
             'quantLicenciando' => $this->licenciandosModel->getTotalLicenciando()['quantidade'],
-            'quantSetoresLicendiando' => $this->licenciandosModel->getTotalSetoresPorLicenciando(),
+            'quantSetoresLicendiando' => $licenciando_setor,
+            'quantUniversidadeLicenciando' => $licenciando_universidade,
             'quantSetores' => count($this->setoresModel->getSetores()),
-            'universidadeLicenciando' => $this->licenciandosModel->getTotalUniversidadePorLicenciando(),
             'quantUniversidades' => count($this->universidadesModel->find()),
             'quantDocumentos' => count($this->documentosModel->find()),
         ];
@@ -46,12 +63,5 @@ class Home extends BaseController
 
         $this->data['body'] = view('home/home_index', $this->data);
         return $this->render();
-    }
-
-    public function teste()
-    {
-        $teste = $this->request->getVar('teste');
-        print_r($this->licenciandoSetorModel->getLicenciandosSetores(51));
-        // print_r($teste);
     }
 }
