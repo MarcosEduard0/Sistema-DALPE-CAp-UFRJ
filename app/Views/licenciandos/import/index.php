@@ -70,6 +70,18 @@
                             <small class="text-muted">
                                 Tamanho máximo do arquivo <strong>10MB</strong>.
                             </small>
+                        <div class="form-group" style="width: max-content;">
+                            <label for="periodo">Período da importação:</label>
+                            <?php
+                            $field = 'periodo';
+                            $value = set_value($field, reset($periodos['Atual']), FALSE);
+                            echo form_dropdown($field, $periodos, $value, 'tabindex="-1" class="custom-select mr-sm-2" required');
+                            ?>
+                            <div class="invalid-feedback">
+                                Período é obrigatório
+                            </div>
+                        </div>
+                        </p>
                         <div class="row">
                             <div class="update ml-auto mr-auto">
                                 <input type="submit" name="submit" class="btn btn-primary btn-round" value="Importar">

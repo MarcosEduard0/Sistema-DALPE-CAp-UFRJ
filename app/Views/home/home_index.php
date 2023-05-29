@@ -52,15 +52,15 @@
         data.addColumn('string', 'Períodos');
         data.addColumn('number', 'Quant.');
 
-        data.addRows([
-            ['2018.1', 10],
-            ['2018.2', 20],
-            ['2019.1', 15],
-            ['2019.2', 25],
-
-
-        ]);
-
+        <?php if (!empty($quantPeriodos)) : ?>
+            // Adicionar linhas com base nos valores recebidos do backend
+            <?php foreach ($quantPeriodos as $item) : ?>
+                data.addRow(['<?php echo $item['periodo']; ?>', <?php echo $item['quantidade']; ?>]);
+            <?php endforeach; ?>
+        <?php else : ?>
+            // Se o arrayData estiver vazio, adicionar uma única linha com a mensagem de aviso
+            data.addRow(['Nenhum dado disponível', 0]);
+        <?php endif; ?>
         var options = {
             legend: {
                 position: 'none'
@@ -174,7 +174,7 @@
         <div class="col-md-6">
             <div class="card ">
                 <div class="card-header ">
-                    <h5 class="card-title">Licenciando por Período(Teste)</h5>
+                    <h5 class="card-title">Licenciando por Período</h5>
                     <!-- <p class="card-category">24 Hours performance</p> -->
                 </div>
                 <div class="card-body ">

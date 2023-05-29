@@ -152,7 +152,14 @@ else $baseUrl = 'adicionar'; ?>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label for="periodo">Período:</label>
-                                            <input type="text" id="periodo" class="form-control" name="periodo[]">
+                                            <?php
+                                            $field = 'periodo[]';
+                                            $value = set_value($field, reset($periodos['Atual']), FALSE);
+                                            echo form_dropdown($field, $periodos, $value, 'tabindex="-1" class="custom-select mr-sm-2" required');
+                                            ?>
+                                            <div class="invalid-feedback">
+                                                Período é obrigatório
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-2 px-1">
@@ -192,7 +199,14 @@ else $baseUrl = 'adicionar'; ?>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label for="periodo">Período:</label>
-                                        <input type="text" id="periodo" class="form-control" name="periodo">
+                                        <?php
+                                        $field = 'periodo';
+                                        $value = set_value($field, isset($licenciando) ? $setor_data['periodo'] : '', FALSE);
+                                        echo form_dropdown($field, $periodos, $value, 'tabindex="-1" class="custom-select mr-sm-2" required');
+                                        ?>
+                                        <div class="invalid-feedback">
+                                            Período é obrigatório
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 px-1">

@@ -28,4 +28,16 @@ class LicenciandoSetorModel extends Model
                 ->getResultArray();
         }
     }
+
+    public function getPeriodCount($id = false)
+    {
+
+        return $this->select('periodo, COUNT(periodo) as quantidade')->where('periodo !=', '')->groupBy('periodo')->get()->getResultArray();
+    }
 }
+
+
+
+
+
+// SELECT periodo, COUNT(periodo) FROM `licenciandosetor` WHERE periodo != '' GROUP BY periodo;

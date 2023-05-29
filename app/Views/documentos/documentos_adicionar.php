@@ -14,7 +14,7 @@ else $baseUrl = 'adicionar'; ?>
                                 <div class="card">
                                     <div style="background: #f4f4f4" class="card-body">
                                         <p class="card-text">[NOME], [ENDERECO], [NUMERO], [COMPLEMENTO], [BAIRRO], [CIDADE], [CEP], [SETOR], [UNIVERSIDADE],
-                                            [PROFESSOR], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_INICIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
+                                            [PROFESSOR], [PERIODO], [DATA_CADASTRO], [HORAS_ESTAGIO], [DATA_INICIO], [DATA_TERMINO], [ANO_TERMINO], [PARAGRAFO]</p>
                                     </div>
                                 </div>
                                 <p>Por exemplo, você pode redigir o seguinte texto: <b>"O aluno [NOME], matriculado na [UNIVERSIDADE], e residente na [ENDERECO]..."</b> </p>

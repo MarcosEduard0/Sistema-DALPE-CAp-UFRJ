@@ -56,7 +56,9 @@ class Home extends BaseController
             'quantSetores' => count($this->setoresModel->getSetores()),
             'quantUniversidades' => count($this->universidadesModel->find()),
             'quantDocumentos' => count($this->documentosModel->find()),
+            'quantPeriodos' => $this->licenciandoSetorModel->getPeriodCount(),
         ];
+
         $sessionData['posicao'] = 'Home';
         session()->set($sessionData);
 

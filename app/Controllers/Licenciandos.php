@@ -83,6 +83,7 @@ class Licenciandos extends BaseController
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
         $this->data['titulo'] = 'Adicionar';
         $this->data['setores'] = $this->setoresModal->getSetores();
+        $this->data['periodos'] = get_periods();
 
         if ($this->request->getMethod() == 'post') {
             $this->salvar();
@@ -101,6 +102,8 @@ class Licenciandos extends BaseController
 
         $this->data['titulo'] = 'Editar';
         $this->data['licenciando'] = $this->licenciandosModel->joinLicenciandoEndereco($id);
+        $this->data['periodos'] = get_periods();
+
 
         if (!is_null($licenciandoSetor_id) && !is_null($id)) {
             $resultLicenSetor = $this->licenciandoSetorModel->find($licenciandoSetor_id);
@@ -182,6 +185,7 @@ class Licenciandos extends BaseController
             'data_inicio' => $this->request->getVar('data_inicio'),
             'data_termino' => $this->request->getVar('data_termino'),
             'professor' => $this->request->getVar('professor'),
+            'periodo' => $this->request->getVar('periodo'),
         ];
 
         $dataAdress = [
@@ -225,6 +229,7 @@ class Licenciandos extends BaseController
                     $save['horas_estagio'] = $dataSetor['horas_estagio'][$i];
                     $save['data_termino'] = $dataSetor['data_termino'][$i];
                     $save['professor'] = $dataSetor['professor'][$i];
+                    $save['periodo'] = $dataSetor['periodo'][$i];
 
                     $this->licenciandoSetorModel->save($save);
                 }
@@ -283,6 +288,8 @@ class Licenciandos extends BaseController
             }
         }
 
+        $this->data['periodos'] = get_periods();
+
         $this->cleanup_import();
 
         $this->data['body'] = view('licenciandos/import/index', $this->data);
@@ -296,6 +303,7 @@ class Licenciandos extends BaseController
      */
     private function process_import()
     {
+        $periodo = $this->request->getVar('periodo');
 
         $input = $this->validate([
             'Arquivo CSV' => 'uploaded[userfile]|max_size[userfile,2048]|ext_in[userfile,csv],'
@@ -330,6 +338,7 @@ class Licenciandos extends BaseController
                             $csvArr[$row]['telefone1'] = $filedata[11];
                             $csvArr[$row]['telefone2'] = $filedata[12];
                             $csvArr[$row]['horas_estagio'] = 0;
+                            $csvArr[$row]['periodo'] = $periodo;
                             $csvArr[$row]['data_cadastro'] = date('Y-m-d');
                         }
                         $row++;
