@@ -28,9 +28,10 @@ function get_periods($year = 2019, $range = false, $rangeYear = 2)
         if ($startYear == $currentYear) {
             if ($currentMonth <= 6) {
                 $semesters['Atual'][$period1] = $period1;
+                $semesters['Anterior'][$period2] = $period2;
             } else {
                 $semesters['Anterior'][$period1] = $period1;
-                $semesters['Anterior'][$period2] = $period2;
+                $semesters['Atual'][$period2] = $period2;
             }
         } else {
             $semesters['Anterior'][$period1] = $period1;
