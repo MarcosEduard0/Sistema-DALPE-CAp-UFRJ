@@ -38,7 +38,7 @@
             </div>
         </div>
         <p class="description text-center"><br>
-            <?= isset($licenciando['observacao']) ? $licenciando['observacao'] : '' ?>
+
         </p>
     </div>
     <?php if (isset($licenciando)) : ?>

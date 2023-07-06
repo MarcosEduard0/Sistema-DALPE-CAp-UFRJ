@@ -41,3 +41,24 @@ function get_periods($year = 2019, $range = false, $rangeYear = 2)
 
     return $semesters;
 }
+
+function get_years($year = 2018, $range = false, $rangeYear = 4)
+{
+    $currentYear = intval(date('Y'));
+    if ($range) {
+        $startYear = $currentYear - $rangeYear;
+    } else {
+        $startYear = $year;
+    }
+    $semesters = array();
+
+    for ($startYear; $startYear <= $currentYear; $startYear++) {
+        if ($startYear == $currentYear) {
+            $semesters['Atual'][$startYear] = $startYear;
+        } else {
+            $semesters['Anterior'][$startYear] = $startYear;
+        }
+    }
+
+    return $semesters;
+}

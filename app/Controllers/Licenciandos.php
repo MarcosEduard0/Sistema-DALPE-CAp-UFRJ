@@ -83,7 +83,7 @@ class Licenciandos extends BaseController
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
         $this->data['titulo'] = 'Adicionar';
         $this->data['setores'] = $this->setoresModal->getSetores();
-        $this->data['periodos'] = get_periods();
+        $this->data['periodos'] = get_years();
 
         if ($this->request->getMethod() == 'post') {
             $this->salvar();
@@ -102,7 +102,7 @@ class Licenciandos extends BaseController
 
         $this->data['titulo'] = 'Editar';
         $this->data['licenciando'] = $this->licenciandosModel->joinLicenciandoEndereco($id);
-        $this->data['periodos'] = get_periods();
+        $this->data['periodos'] = get_years();
 
 
         if (!is_null($licenciandoSetor_id) && !is_null($id)) {
@@ -288,7 +288,7 @@ class Licenciandos extends BaseController
             }
         }
 
-        $this->data['periodos'] = get_periods();
+        $this->data['periodos'] = get_years();
 
         $this->cleanup_import();
 
