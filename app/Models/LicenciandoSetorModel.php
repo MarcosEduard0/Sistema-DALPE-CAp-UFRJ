@@ -12,7 +12,7 @@ class LicenciandoSetorModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'licenciando_id', 'setor_id', 'data_cadastro',
-        'horas_estagio', 'data_inicio', 'data_termino', 'professor', 'periodo'
+        'horas_estagio', 'data_inicio', 'data_termino', 'professor'
     ];
 
     //metodo GET
@@ -27,12 +27,6 @@ class LicenciandoSetorModel extends Model
                 ->getwhere(['licenciando_id' => $id])
                 ->getResultArray();
         }
-    }
-
-    public function getPeriodCount($id = false)
-    {
-
-        return $this->select('periodo, COUNT(periodo) as quantidade')->where('periodo !=', '')->groupBy('periodo')->get()->getResultArray();
     }
 }
 
