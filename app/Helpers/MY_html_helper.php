@@ -11,7 +11,7 @@ function msgbox($tipo = 'danger', $conteudo = '')
     return $html;
 }
 
-function get_periods($year = 2019, $range = false, $rangeYear = 2)
+function get_periods($year = 2017, $cluster = true, $range = false, $rangeYear = 2)
 {
     $currentYear = intval(date('Y'));
     $currentMonth = intval(date('m'));
@@ -21,28 +21,35 @@ function get_periods($year = 2019, $range = false, $rangeYear = 2)
         $startYear = $year;
     }
     $semesters = array();
-
-    for ($startYear; $startYear <= $currentYear; $startYear++) {
-        $period1 = $startYear . '.1';
-        $period2 = $startYear . '.2';
-        if ($startYear == $currentYear) {
-            if ($currentMonth <= 6) {
-                $semesters['Atual'][$period1] = $period1;
-                $semesters['Anterior'][$period2] = $period2;
+    if ($cluster) {
+        for ($startYear; $startYear <= $currentYear; $startYear++) {
+            $period1 = $startYear . '.1';
+            $period2 = $startYear . '.2';
+            if ($startYear == $currentYear) {
+                if ($currentMonth <= 6) {
+                    $semesters['Atual'][$period1] = $period1;
+                    $semesters['Anterior'][$period2] = $period2;
+                } else {
+                    $semesters['Anterior'][$period1] = $period1;
+                    $semesters['Atual'][$period2] = $period2;
+                }
             } else {
                 $semesters['Anterior'][$period1] = $period1;
-                $semesters['Atual'][$period2] = $period2;
+                $semesters['Anterior'][$period2] = $period2;
             }
-        } else {
-            $semesters['Anterior'][$period1] = $period1;
-            $semesters['Anterior'][$period2] = $period2;
+        }
+    } else {
+        for ($startYear; $startYear <= $currentYear; $startYear++) {
+            $period1 = $startYear . '.1';
+            $period2 = $startYear . '.2';
+            $semesters[$period1] = $period1;
+            $semesters[$period2] = $period2;
         }
     }
-
     return $semesters;
 }
 
-function get_years($year = 2018, $range = false, $rangeYear = 4)
+function get_years($year = 2017, $cluster = true, $range = false, $rangeYear = 4)
 {
     $currentYear = intval(date('Y'));
     if ($range) {
@@ -51,14 +58,18 @@ function get_years($year = 2018, $range = false, $rangeYear = 4)
         $startYear = $year;
     }
     $semesters = array();
-
-    for ($startYear; $startYear <= $currentYear; $startYear++) {
-        if ($startYear == $currentYear) {
-            $semesters['Atual'][$startYear] = $startYear;
-        } else {
-            $semesters['Anterior'][$startYear] = $startYear;
+    if ($cluster) {
+        for ($startYear; $startYear <= $currentYear; $startYear++) {
+            if ($startYear == $currentYear) {
+                $semesters['Atual'][$startYear] = $startYear;
+            } else {
+                $semesters['Anterior'][$startYear] = $startYear;
+            }
+        }
+    } else {
+        for ($startYear; $startYear <= $currentYear; $startYear++) {
+            $semesters[$startYear] = $startYear;
         }
     }
-
     return $semesters;
 }
