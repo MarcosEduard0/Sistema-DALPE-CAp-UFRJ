@@ -195,7 +195,7 @@ class Documentos extends BaseController
         $conteudo = str_replace('[SETOR]', mb_strtoupper($documentoSetor), $conteudo);
         $conteudo = str_replace('[UNIVERSIDADE]', mb_strtoupper($this->data['licenciando']['sigla_universidade']), $conteudo);
         $conteudo = str_replace('[PROFESSOR]', mb_strtoupper($this->data['setor']['professor']), $conteudo);
-        $conteudo = str_replace('[PERIODO]', $this->data['setor']['periodo'], $conteudo);
+        // $conteudo = str_replace('[PERIODO]', $this->data['setor']['periodo'], $conteudo);
         $conteudo = str_replace('[DATA_CADASTRO]', $dataCadastro, $conteudo);
         $conteudo = str_replace('[DATA_INICIO]', $datainicio, $conteudo);
         $conteudo = str_replace('[HORAS_ESTAGIO]', $horas_estagios, $conteudo);
