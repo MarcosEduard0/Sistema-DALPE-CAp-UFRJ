@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\LicenciandosModel;
 use App\Models\LicenciandoSetorModel;
+use App\Models\LicenciandoSetorPeriodoModel;
 use App\Models\DocumentosModel;
 use App\Models\SetoresModel;
 use App\Models\UniversidadesModel;
@@ -13,7 +14,7 @@ class Home extends BaseController
 
     protected $licenciandosModel;
     protected $licenciandoSetorModel;
-    protected $licenciandodocumentosModelsModel;
+    protected $licenciandoSetorPeriodoModel;
     protected $documentosModel;
     protected $universidadesModel;
     protected $setoresModel;
@@ -22,6 +23,7 @@ class Home extends BaseController
     {
         $this->licenciandosModel = new LicenciandosModel();
         $this->licenciandoSetorModel = new LicenciandoSetorModel();
+        $this->licenciandoSetorPeriodoModel = new LicenciandoSetorPeriodoModel();
         $this->documentosModel = new DocumentosModel();
         $this->universidadesModel = new UniversidadesModel();
         $this->setoresModel = new SetoresModel();
@@ -56,7 +58,7 @@ class Home extends BaseController
             'quantSetores' => count($this->setoresModel->getSetores()),
             'quantUniversidades' => count($this->universidadesModel->find()),
             'quantDocumentos' => count($this->documentosModel->find()),
-            'quantPeriodos' => $this->licenciandoSetorModel->getPeriodCount(),
+            'quantPeriodos' => $this->licenciandoSetorPeriodoModel->getPeriodCount(),
         ];
 
         $sessionData['posicao'] = 'Home';
