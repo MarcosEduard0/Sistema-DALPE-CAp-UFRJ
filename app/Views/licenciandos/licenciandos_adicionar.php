@@ -198,27 +198,40 @@ else $baseUrl = 'adicionar'; ?>
                                 </div>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label for="periodo">Período:</label>
-                                        <?php
-                                        $field = 'periodo';
-                                        $value = set_value($field, isset($licenciando) ? $setor_data['periodo'] : '', FALSE);
-                                        echo form_dropdown($field, $periodos, $value, 'tabindex="-1" class="custom-select mr-sm-2" required');
-                                        ?>
-                                        <div class="invalid-feedback">
-                                            Período é obrigatório
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 px-1">
-                                    <div class="form-group">
                                         <label for="horas_estagio">Horas de estagio:</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['horas_estagio']) ? $setor_data['horas_estagio'] : set_value('horas_estagio') ?>" name="horas_estagio">
                                     </div>
                                 </div>
-                                <div class="col-md-8 pl-1">
+                                <div class="col-md-10 pl-1">
                                     <div class="form-group">
                                         <label for="professor">Professor(a) de Prática</label>
                                         <input type="text" class="form-control" value="<?= isset($setor_data['professor']) ? $setor_data['professor'] : set_value('professor') ?>" name="professor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="periodo">Períodos</label>
+                                        <?php
+                                        if (isset($licenciando)) {
+                                            $periodo_select = array();
+                                            foreach ($licenciandoSetorPeriodos as $licenciandoSetorPeriodo) {
+                                                $periodo_select[$licenciandoSetorPeriodo['periodo']] = $licenciandoSetorPeriodo['periodo'];
+                                            }
+                                        }
+                                        $field = 'periodo';
+                                        $value = set_value($field, isset($licenciando) ? $periodo_select : '', FALSE);
+                                        echo form_dropdown(
+                                            'periodo[]',
+                                            $periodos,
+                                            $value,
+                                            'id="choices-multiple-remove-button" multiple class="form-control" placeholder="Digite para pesquisar..."'
+                                        );
+                                        ?>
+                                        <div class="invalid-feedback">
+                                            Período é obrigatório
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +256,7 @@ else $baseUrl = 'adicionar'; ?>
                                             'setor_id[]',
                                             $setores_options,
                                             $value,
-                                            'id="choices-multiple-remove-button" multiple required placeholder="Digite para pesquisar..."'
+                                            'id="choices-multiple-remove-button" multiple placeholder="Digite para pesquisar..."'
                                         );
                                         ?>
                                         <div class="invalid-feedback">
