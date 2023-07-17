@@ -8,6 +8,7 @@ use App\Models\DocumentosModel;
 use App\Models\UniversidadesModel;
 use App\Models\EnderecosModel;
 use App\Models\LicenciandoSetorModel;
+use App\Models\LicenciandoSetorPeriodoModel;
 
 class Licenciandos extends BaseController
 {
@@ -19,6 +20,7 @@ class Licenciandos extends BaseController
     protected $enderecoModel;
     protected $documentosModel;
     protected $licenciandoSetorModel;
+    protected $licenciandoSetorPeriodoModel;
 
     public function __construct()
     {
@@ -28,6 +30,7 @@ class Licenciandos extends BaseController
         $this->universidadesModel = new UniversidadesModel();
         $this->enderecoModel = new EnderecosModel();
         $this->licenciandoSetorModel = new LicenciandoSetorModel();
+        $this->licenciandoSetorPeriodoModel = new LicenciandoSetorPeriodoModel();
     }
 
     public function index()
@@ -35,7 +38,6 @@ class Licenciandos extends BaseController
         $this->data['titulo'] = 'Licenciandos';
         $this->data['licenciandos'] = $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco();
         $this->data['setores'] = array();
-        $this->data['periodos'] = array();
         $i = 0;
         foreach ($this->data['licenciandos'] as $licenciando) {
             $this->data['setores'][$i] = $this->licenciandoSetorModel->getLicenciandosSetores($licenciando['licenciando_id']);
@@ -49,18 +51,14 @@ class Licenciandos extends BaseController
                 $this->data['licenciandos'][$i]['setores_id'] = 0;
             } else {
                 $nomeSetor = array();
-                $periodos = array();
                 $row = 0;
 
                 foreach ($this->data['setores'][$i] as $setor) {
                     $nomeSetor[$row] = $setor['nome'];
-                    $periodos[$row] = $setor['periodo'];
                     $row++;
                 }
                 $nomeSetor = implode(", ", $nomeSetor);
-                $periodos = implode(", ", $periodos);
 
-                $this->data['licenciandos'][$i]['periodos'] = $periodos;
                 $this->data['licenciandos'][$i]['setores'] =  $nomeSetor;
                 $this->data['licenciandos'][$i]['setores_id'] = $this->data['setores'][$i][0]['id'];
             }
@@ -83,7 +81,7 @@ class Licenciandos extends BaseController
         $this->data['universidades'] = $this->universidadesModel->getUniversidades();
         $this->data['titulo'] = 'Adicionar';
         $this->data['setores'] = $this->setoresModal->getSetores();
-        $this->data['periodos'] = get_years();
+        $this->data['periodos'] = get_years(2016, true);
 
         if ($this->request->getMethod() == 'post') {
             $this->salvar();
@@ -102,7 +100,8 @@ class Licenciandos extends BaseController
 
         $this->data['titulo'] = 'Editar';
         $this->data['licenciando'] = $this->licenciandosModel->joinLicenciandoEndereco($id);
-        $this->data['periodos'] = get_years();
+        $this->data['periodos'] = get_years(2016, false);
+        $this->data['licenciandoSetorPeriodos'] = $this->licenciandoSetorPeriodoModel->getPeriodosByIdLicenSetor($licenciandoSetor_id);
 
 
         if (!is_null($licenciandoSetor_id) && !is_null($id)) {
@@ -153,7 +152,9 @@ class Licenciandos extends BaseController
 
         $this->validation->setRule('nome_completo', 'Nome Completo', 'required|min_length[3]|max_length[100]');
         $this->validation->setRule('dre', 'DRE', 'required|max_length[32]|is_unique[licenciandos.dre]');
+        $this->validation->setRule('dre', 'DRE', 'required|max_length[32]');
         $this->validation->setRule('setor_id', 'Setor Curricular', 'required');
+        $this->validation->setRule('periodo', 'Período', 'required');
         $this->validation->setRule('universidade_id', 'Universidade', 'required');
 
         if (!empty($licenciandoId)) {
@@ -163,7 +164,6 @@ class Licenciandos extends BaseController
             if (!strcmp($dreAntigo, $dreNovo))
                 $this->validation->setRule('dre', 'DRE', 'required|max_length[32]');
         }
-
         $dataLicenciando = [
             'licenciando_id' =>  $licenciandoId,
             'dre' => $dreNovo,
@@ -176,7 +176,11 @@ class Licenciandos extends BaseController
             'universidade_id' => $this->request->getVar('universidade_id'),
             'setores_id' => $this->request->getVar('setor_id'),
             'observacao' => $this->request->getVar('observacao')
+        ];
 
+        $dataPeriodos = [
+            'licenciando_setor_id' => $licenciandoSetor_id,
+            'periodo' => $this->request->getVar('periodo')
         ];
 
         $dataSetor = [
@@ -185,7 +189,6 @@ class Licenciandos extends BaseController
             'data_inicio' => $this->request->getVar('data_inicio'),
             'data_termino' => $this->request->getVar('data_termino'),
             'professor' => $this->request->getVar('professor'),
-            'periodo' => $this->request->getVar('periodo'),
         ];
 
         $dataAdress = [
@@ -195,7 +198,6 @@ class Licenciandos extends BaseController
             'cep' => $this->request->getVar('cep'),
             'cidade' => $this->request->getVar('cidade'),
         ];
-
 
         if ($this->validation->withRequest($this->request)->run()) {
 
@@ -222,18 +224,35 @@ class Licenciandos extends BaseController
             if (empty($licenciandoId)) {
                 $save = $dataSetor;
                 $save['licenciando_id'] =  $this->licenciandosModel->getLastLicenciandoSave();
-
+                $ids_lice_setor = array();
                 for ($i = 0; $i < count($dataSetor['setor_id']); $i++) {
                     $save['setor_id'] = $dataSetor['setor_id'][$i];
                     $save['data_cadastro'] = date('Y-m-d');
                     $save['horas_estagio'] = $dataSetor['horas_estagio'][$i];
+                    $save['data_inicio'] = $dataSetor['data_inicio'][$i];
                     $save['data_termino'] = $dataSetor['data_termino'][$i];
                     $save['professor'] = $dataSetor['professor'][$i];
-                    $save['periodo'] = $dataSetor['periodo'][$i];
-
                     $this->licenciandoSetorModel->save($save);
+                    $ids_lice_setor[$i] = $this->licenciandoSetorModel->insertID();
+                }
+                // Salvando as informações do periodo do licenciando novo
+                for ($i = 0; $i < count($ids_lice_setor); $i++) {
+                    $this->licenciandoSetorPeriodoModel->insert([
+                        'licenciando_setor_id' => $ids_lice_setor[$i],
+                        'periodo' => $dataPeriodos['periodo'][$i]
+                    ]);
+                }
+            } else {
+                // Removendo e Salvando as informações do periodo do licenciando
+                $this->licenciandoSetorPeriodoModel->where(['licenciando_setor_id' => $licenciandoSetor_id])->delete();
+                foreach ($dataPeriodos['periodo'] as $periodo) {
+                    $this->licenciandoSetorPeriodoModel->insert([
+                        'licenciando_setor_id' => $licenciandoSetor_id,
+                        'periodo' => $periodo
+                    ]);
                 }
             }
+
 
             if (!is_null($licenciandoSetor_id)) {
                 $dataLicenciandoSetor = $this->licenciandoSetorModel->getLicenciandosSetores($licenciandoId);
@@ -287,8 +306,7 @@ class Licenciandos extends BaseController
                 return redirect()->to('licenciandos/import_results');
             }
         }
-
-        $this->data['periodos'] = get_years();
+        $this->data['periodos'] = get_years(2016, true);
 
         $this->cleanup_import();
 
@@ -446,6 +464,13 @@ class Licenciandos extends BaseController
                     $data['setor_id'] = $id;
                     $data['professor'] = $professores[$i];
                     $res = $this->licenciandoSetorModel->insert($data);
+
+                    $ids_lice_setor = $this->licenciandoSetorModel->insertID();
+                    $this->licenciandoSetorPeriodoModel->insert([
+                        'licenciando_setor_id' => $ids_lice_setor,
+                        'periodo' => $data['periodo']
+                    ]);
+
                     if (!$res)
                         return 'bd_erro';
                     $i++;
@@ -503,6 +528,12 @@ class Licenciandos extends BaseController
                 if (!$res)
                     return 'bd_erro';
 
+                $ids_lice_setor = $this->licenciandoSetorModel->insertID();
+                $this->licenciandoSetorPeriodoModel->insert([
+                    'licenciando_setor_id' => $ids_lice_setor,
+                    'periodo' => $data['periodo']
+                ]);
+
                 return 'sucesso';
             } else {
                 // Salva o licenciando
@@ -519,6 +550,12 @@ class Licenciandos extends BaseController
 
                     //salvando o setor
                     $this->licenciandoSetorModel->insert($data);
+
+                    $ids_lice_setor = $this->licenciandoSetorModel->insertID();
+                    $this->licenciandoSetorPeriodoModel->insert([
+                        'licenciando_setor_id' => $ids_lice_setor,
+                        'periodo' => $data['periodo']
+                    ]);
 
                     //Salva endereço
                     $res = $this->enderecoModel->save($data);
