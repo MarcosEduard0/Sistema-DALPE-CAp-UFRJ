@@ -80,9 +80,10 @@
     </style>
 
     <div class="imagem">
-        <img style=" width: auto;height: 100px; padding:20px" src='public/assets/img/documentos/UFRJ.jpg'>
-        <img style=" width: auto; height: 98px;padding:20px" src="public/assets/img/documentos/CAP.jpg">
-        <img style=" width: auto;height: 98px;padding:20px" src='public/assets/img/documentos/SOL.jpg'>
+        <!-- <img style=" width: auto;height: 100px; padding:20px" src='public/assets/img/documentos/UFRJ.jpg'> -->
+        <!-- <img style=" width: auto; height: 98px;padding:20px" src="public/assets/img/documentos/CAP.jpg"> -->
+        <img style=" width: auto; height: 103;padding:20px" src="public/assets/img/documentos/brasao_75_anos.jpg">
+        <!-- <img style=" width: auto;height: 98px;padding:20px" src='public/assets/img/documentos/SOL.jpg'> -->
     </div>
 </head>
 
@@ -98,7 +99,15 @@
     <div class="assinatura">
         <b> Direção Adjunta de Licenciatura, Pesquisa e Extensão</b><br>
         <?= session()->get('usuario')['nome_completo'] ?> | <?= session()->get('usuario')['cargo'] ?> | SIAPE <?= session()->get('usuario')['siape'] ?><br>
-        <img src='public/assets/uploads/<?= session()->get('usuario')['assinatura'] ?>'>
+        <?php
+        $assinatura = session()->get('usuario')['assinatura'];
+
+        if (!empty($assinatura)) {
+            echo "<img src='public/assets/uploads/$assinatura'>";
+        } else {
+            echo "";
+        }
+        ?>
     </div>
 
     <div class="footer">
