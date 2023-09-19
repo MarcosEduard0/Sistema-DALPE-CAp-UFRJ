@@ -19,7 +19,6 @@ class LicenciandoSetorModel extends Model
     public function getLicenciandosSetores($id = false)
     {
         if ($id === false)
-            // return $this->findAll();
             return $this->join('setores', 'setores.setor_id = licenciandosetor.setor_id')
                 ->getResultArray();
         else {
@@ -28,8 +27,14 @@ class LicenciandoSetorModel extends Model
                 ->getResultArray();
         }
     }
-}
 
+    public function getIdByLicenciandoId($licenciando_id)
+    {
+        return $this->select('id')
+            ->where(['licenciando_id' => $licenciando_id])
+            ->get()->getResultArray();
+    }
+}
 
 
 

@@ -36,41 +36,46 @@ class Licenciandos extends BaseController
     public function index()
     {
         $this->data['titulo'] = 'Licenciandos';
+        $licenciandos = $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco();
         $this->data['licenciandos'] = $this->licenciandosModel->getLicenciandosAndUniversidadeAndEndereco();
-        $this->data['setores'] = array();
         $i = 0;
-        foreach ($this->data['licenciandos'] as $licenciando) {
-            $this->data['setores'][$i] = $this->licenciandoSetorModel->getLicenciandosSetores($licenciando['licenciando_id']);
+        foreach ($licenciandos as $licenciando) {
+            $setores = $this->licenciandoSetorModel->getLicenciandosSetores($licenciando['licenciando_id']);
+            $periodos = [];
 
-            if (empty($this->data['setores'][$i])) {
-                $this->data['setores'][$i] = array(
-                    'id'  => 0,
-                    'setor' => "Nenhum(a)"
-                );
-                $this->data['licenciandos'][$i]['setores'] = "Nenhum(a)";
-                $this->data['licenciandos'][$i]['setores_id'] = 0;
-            } else {
-                $nomeSetor = array();
-                $row = 0;
-
-                foreach ($this->data['setores'][$i] as $setor) {
-                    $nomeSetor[$row] = $setor['nome'];
-                    $row++;
+            $ids_setorlienciando = $this->licenciandoSetorModel->getIdByLicenciandoId($licenciando['licenciando_id']);
+            if (!empty($ids_setorlienciando)) {
+                foreach ($ids_setorlienciando as $id) {
+                    $periodo = $this->licenciandoSetorPeriodoModel->getPeriodosByIdLicenSetor($id['id']);
+                    if (!empty($periodo)) {
+                        foreach ($periodo as $p) {
+                            $periodos[] = $p['periodo'];
+                        }
+                    }
                 }
-                $nomeSetor = implode(", ", $nomeSetor);
-
-                $this->data['licenciandos'][$i]['setores'] =  $nomeSetor;
-                $this->data['licenciandos'][$i]['setores_id'] = $this->data['setores'][$i][0]['id'];
             }
 
+            $periodos = implode(", ", array_unique($periodos));
+            $periodos = empty($periodos) ? 'Nenhum' : $periodos;
+
+            $setoresInfo = empty($setores) ? [
+                ['id' => 0, 'nome' => "Nenhum"]
+            ] : $setores;
+
+            $setorNames = implode(", ", array_column($setoresInfo, 'nome'));
+
+            $this->data['licenciandos'][$i]['periodos'] = $periodos;
+            $this->data['licenciandos'][$i]['setores'] =  $setorNames;
+            $this->data['licenciandos'][$i]['setores_id'] = $setoresInfo[0]['id'];
             $i++;
         }
 
         $this->data['body'] = view('licenciandos/licenciandos_index', $this->data);
-        $sessionData['posicao'] = 'Licenciandos';
-        session()->set($sessionData);
+        session()->set(['posicao' => 'Licenciandos']);
         return $this->render();
     }
+
+
     public function setor_select($licenciando_id)
     {
         $licenciando_setor = $this->request->getVar('licenciando_setor');

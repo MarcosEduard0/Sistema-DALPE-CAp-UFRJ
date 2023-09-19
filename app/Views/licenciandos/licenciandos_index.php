@@ -12,6 +12,7 @@
                             <th>Nome</th>
                             <th>DRE</th>
                             <th>Universidade</th>
+                            <th>Períodos</th>
                             <th>Setor Curricular</th>
                             <th>Ações</th>
                         </tr>
@@ -23,6 +24,7 @@
                                     <td><?= $licenciando['nome_completo'] ?></td>
                                     <td><?= $licenciando['dre'] ?></td>
                                     <td><?= (isset($licenciando['sigla_universidade'])) ? $licenciando['sigla_universidade'] : 'Nenhuma'  ?></td>
+                                    <td><?= $licenciando['periodos'] ?></td>
                                     <td><?= $licenciando['setores'] ?></td>
                                     <td class="text-center" style="color: white;">
                                         <div class="actions">

@@ -2,7 +2,7 @@
     <div class="login-form">
         <div class="image-container">
             <figure>
-                <img width="180" src="public/assets/img/cap.jpg" alt="Logo">
+                <img width="180" src="public/assets/img/documentos/brasao_75_anos.jpg" alt="Logo">
             </figure>
         </div>
 
